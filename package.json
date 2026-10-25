@@ -1,0 +1,28 @@
+{
+  "name": "dual-sub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^3.0.0",
+    "@preact/preset-vite": "^2.10.6",
+    "@types/chrome": "^0.3.6",
+    "fake-indexeddb": "^6.2.6",
+    "happy-dom": "^21.0.4",
+    "terser": "^5.51.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "dexie": "^4.4.7",
+    "preact": "^11.0.2",
+    "ts-fsrs": "^5.4.2"
+  }
+}

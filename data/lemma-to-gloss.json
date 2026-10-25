@@ -1,0 +1,4086 @@
+{
+  "pfütze": {
+    "pos": "noun",
+    "glosses": [
+      "puddle"
+    ]
+  },
+  "matsch": {
+    "pos": "noun",
+    "glosses": [
+      "mud",
+      "slush"
+    ]
+  },
+  "schlamm": {
+    "pos": "noun",
+    "glosses": [
+      "mud",
+      "sludge"
+    ]
+  },
+  "stiefel": {
+    "pos": "noun",
+    "glosses": [
+      "boot",
+      "boots"
+    ]
+  },
+  "gummistiefel": {
+    "pos": "noun",
+    "glosses": [
+      "rubber boots",
+      "wellington boots"
+    ]
+  },
+  "schwein": {
+    "pos": "noun",
+    "glosses": [
+      "pig",
+      "swine"
+    ]
+  },
+  "ferkel": {
+    "pos": "noun",
+    "glosses": [
+      "piglet"
+    ]
+  },
+  "mama": {
+    "pos": "noun",
+    "glosses": [
+      "mom",
+      "mummy"
+    ]
+  },
+  "papa": {
+    "pos": "noun",
+    "glosses": [
+      "dad",
+      "daddy"
+    ]
+  },
+  "bruder": {
+    "pos": "noun",
+    "glosses": [
+      "brother"
+    ]
+  },
+  "schwester": {
+    "pos": "noun",
+    "glosses": [
+      "sister"
+    ]
+  },
+  "oma": {
+    "pos": "noun",
+    "glosses": [
+      "grandma",
+      "granny"
+    ]
+  },
+  "opa": {
+    "pos": "noun",
+    "glosses": [
+      "grandpa"
+    ]
+  },
+  "dinosaurier": {
+    "pos": "noun",
+    "glosses": [
+      "dinosaur"
+    ]
+  },
+  "dino": {
+    "pos": "noun",
+    "glosses": [
+      "dino"
+    ]
+  },
+  "teddy": {
+    "pos": "noun",
+    "glosses": [
+      "teddy bear"
+    ]
+  },
+  "spielzeug": {
+    "pos": "noun",
+    "glosses": [
+      "toy"
+    ]
+  },
+  "schaukel": {
+    "pos": "noun",
+    "glosses": [
+      "swing"
+    ]
+  },
+  "rutsche": {
+    "pos": "noun",
+    "glosses": [
+      "slide"
+    ]
+  },
+  "spielplatz": {
+    "pos": "noun",
+    "glosses": [
+      "playground"
+    ]
+  },
+  "regen": {
+    "pos": "noun",
+    "glosses": [
+      "rain"
+    ]
+  },
+  "sonne": {
+    "pos": "noun",
+    "glosses": [
+      "sun"
+    ]
+  },
+  "wolke": {
+    "pos": "noun",
+    "glosses": [
+      "cloud"
+    ]
+  },
+  "wind": {
+    "pos": "noun",
+    "glosses": [
+      "wind"
+    ]
+  },
+  "wetter": {
+    "pos": "noun",
+    "glosses": [
+      "weather"
+    ]
+  },
+  "baum": {
+    "pos": "noun",
+    "glosses": [
+      "tree"
+    ]
+  },
+  "blume": {
+    "pos": "noun",
+    "glosses": [
+      "flower"
+    ]
+  },
+  "gras": {
+    "pos": "noun",
+    "glosses": [
+      "grass"
+    ]
+  },
+  "garten": {
+    "pos": "noun",
+    "glosses": [
+      "garden"
+    ]
+  },
+  "haus": {
+    "pos": "noun",
+    "glosses": [
+      "house",
+      "home"
+    ]
+  },
+  "zimmer": {
+    "pos": "noun",
+    "glosses": [
+      "room"
+    ]
+  },
+  "küche": {
+    "pos": "noun",
+    "glosses": [
+      "kitchen"
+    ]
+  },
+  "bett": {
+    "pos": "noun",
+    "glosses": [
+      "bed"
+    ]
+  },
+  "tisch": {
+    "pos": "noun",
+    "glosses": [
+      "table"
+    ]
+  },
+  "stuhl": {
+    "pos": "noun",
+    "glosses": [
+      "chair"
+    ]
+  },
+  "auto": {
+    "pos": "noun",
+    "glosses": [
+      "car"
+    ]
+  },
+  "bus": {
+    "pos": "noun",
+    "glosses": [
+      "bus"
+    ]
+  },
+  "zug": {
+    "pos": "noun",
+    "glosses": [
+      "train"
+    ]
+  },
+  "fahrrad": {
+    "pos": "noun",
+    "glosses": [
+      "bicycle",
+      "bike"
+    ]
+  },
+  "ball": {
+    "pos": "noun",
+    "glosses": [
+      "ball"
+    ]
+  },
+  "spiel": {
+    "pos": "noun",
+    "glosses": [
+      "game",
+      "play"
+    ]
+  },
+  "buch": {
+    "pos": "noun",
+    "glosses": [
+      "book"
+    ]
+  },
+  "geschichte": {
+    "pos": "noun",
+    "glosses": [
+      "story",
+      "history"
+    ]
+  },
+  "musik": {
+    "pos": "noun",
+    "glosses": [
+      "music"
+    ]
+  },
+  "lied": {
+    "pos": "noun",
+    "glosses": [
+      "song"
+    ]
+  },
+  "spass": {
+    "pos": "noun",
+    "glosses": [
+      "fun",
+      "pleasure"
+    ]
+  },
+  "spaß": {
+    "pos": "noun",
+    "glosses": [
+      "fun",
+      "pleasure"
+    ]
+  },
+  "freude": {
+    "pos": "noun",
+    "glosses": [
+      "joy",
+      "delight"
+    ]
+  },
+  "freund": {
+    "pos": "noun",
+    "glosses": [
+      "friend",
+      "boyfriend"
+    ]
+  },
+  "freundin": {
+    "pos": "noun",
+    "glosses": [
+      "friend",
+      "girlfriend"
+    ]
+  },
+  "freundschaft": {
+    "pos": "noun",
+    "glosses": [
+      "friendship"
+    ]
+  },
+  "tier": {
+    "pos": "noun",
+    "glosses": [
+      "animal"
+    ]
+  },
+  "hund": {
+    "pos": "noun",
+    "glosses": [
+      "dog"
+    ]
+  },
+  "katze": {
+    "pos": "noun",
+    "glosses": [
+      "cat"
+    ]
+  },
+  "vogel": {
+    "pos": "noun",
+    "glosses": [
+      "bird"
+    ]
+  },
+  "ente": {
+    "pos": "noun",
+    "glosses": [
+      "duck"
+    ]
+  },
+  "frosch": {
+    "pos": "noun",
+    "glosses": [
+      "frog"
+    ]
+  },
+  "hase": {
+    "pos": "noun",
+    "glosses": [
+      "rabbit",
+      "hare"
+    ]
+  },
+  "kaninchen": {
+    "pos": "noun",
+    "glosses": [
+      "rabbit",
+      "bunny"
+    ]
+  },
+  "pferd": {
+    "pos": "noun",
+    "glosses": [
+      "horse"
+    ]
+  },
+  "pony": {
+    "pos": "noun",
+    "glosses": [
+      "pony"
+    ]
+  },
+  "kuh": {
+    "pos": "noun",
+    "glosses": [
+      "cow"
+    ]
+  },
+  "schaf": {
+    "pos": "noun",
+    "glosses": [
+      "sheep"
+    ]
+  },
+  "ziege": {
+    "pos": "noun",
+    "glosses": [
+      "goat"
+    ]
+  },
+  "huhn": {
+    "pos": "noun",
+    "glosses": [
+      "chicken",
+      "hen"
+    ]
+  },
+  "fisch": {
+    "pos": "noun",
+    "glosses": [
+      "fish"
+    ]
+  },
+  "elefant": {
+    "pos": "noun",
+    "glosses": [
+      "elephant"
+    ]
+  },
+  "löwe": {
+    "pos": "noun",
+    "glosses": [
+      "lion"
+    ]
+  },
+  "krokodil": {
+    "pos": "noun",
+    "glosses": [
+      "crocodile"
+    ]
+  },
+  "affe": {
+    "pos": "noun",
+    "glosses": [
+      "monkey"
+    ]
+  },
+  "bär": {
+    "pos": "noun",
+    "glosses": [
+      "bear"
+    ]
+  },
+  "maus": {
+    "pos": "noun",
+    "glosses": [
+      "mouse"
+    ]
+  },
+  "picknick": {
+    "pos": "noun",
+    "glosses": [
+      "picnic"
+    ]
+  },
+  "kuchen": {
+    "pos": "noun",
+    "glosses": [
+      "cake"
+    ]
+  },
+  "keks": {
+    "pos": "noun",
+    "glosses": [
+      "cookie",
+      "biscuit"
+    ]
+  },
+  "apfel": {
+    "pos": "noun",
+    "glosses": [
+      "apple"
+    ]
+  },
+  "banane": {
+    "pos": "noun",
+    "glosses": [
+      "banana"
+    ]
+  },
+  "brot": {
+    "pos": "noun",
+    "glosses": [
+      "bread"
+    ]
+  },
+  "brötchen": {
+    "pos": "noun",
+    "glosses": [
+      "bread roll"
+    ]
+  },
+  "käse": {
+    "pos": "noun",
+    "glosses": [
+      "cheese"
+    ]
+  },
+  "milch": {
+    "pos": "noun",
+    "glosses": [
+      "milk"
+    ]
+  },
+  "wasser": {
+    "pos": "noun",
+    "glosses": [
+      "water"
+    ]
+  },
+  "saft": {
+    "pos": "noun",
+    "glosses": [
+      "juice"
+    ]
+  },
+  "eis": {
+    "pos": "noun",
+    "glosses": [
+      "ice cream",
+      "ice"
+    ]
+  },
+  "schokolade": {
+    "pos": "noun",
+    "glosses": [
+      "chocolate"
+    ]
+  },
+  "frühstück": {
+    "pos": "noun",
+    "glosses": [
+      "breakfast"
+    ]
+  },
+  "mittagessen": {
+    "pos": "noun",
+    "glosses": [
+      "lunch"
+    ]
+  },
+  "abendessen": {
+    "pos": "noun",
+    "glosses": [
+      "dinner",
+      "supper"
+    ]
+  },
+  "brille": {
+    "pos": "noun",
+    "glosses": [
+      "glasses",
+      "spectacles"
+    ]
+  },
+  "uhr": {
+    "pos": "noun",
+    "glosses": [
+      "clock",
+      "watch",
+      "hour"
+    ]
+  },
+  "hut": {
+    "pos": "noun",
+    "glosses": [
+      "hat"
+    ]
+  },
+  "mütze": {
+    "pos": "noun",
+    "glosses": [
+      "cap",
+      "beanie"
+    ]
+  },
+  "jacke": {
+    "pos": "noun",
+    "glosses": [
+      "jacket"
+    ]
+  },
+  "mantel": {
+    "pos": "noun",
+    "glosses": [
+      "coat"
+    ]
+  },
+  "hose": {
+    "pos": "noun",
+    "glosses": [
+      "pants",
+      "trousers"
+    ]
+  },
+  "kleid": {
+    "pos": "noun",
+    "glosses": [
+      "dress"
+    ]
+  },
+  "schuh": {
+    "pos": "noun",
+    "glosses": [
+      "shoe"
+    ]
+  },
+  "socke": {
+    "pos": "noun",
+    "glosses": [
+      "sock"
+    ]
+  },
+  "t-shirt": {
+    "pos": "noun",
+    "glosses": [
+      "t-shirt"
+    ]
+  },
+  "tasche": {
+    "pos": "noun",
+    "glosses": [
+      "bag",
+      "pocket"
+    ]
+  },
+  "rucksack": {
+    "pos": "noun",
+    "glosses": [
+      "backpack"
+    ]
+  },
+  "arzt": {
+    "pos": "noun",
+    "glosses": [
+      "doctor"
+    ]
+  },
+  "zahnarzt": {
+    "pos": "noun",
+    "glosses": [
+      "dentist"
+    ]
+  },
+  "lehrer": {
+    "pos": "noun",
+    "glosses": [
+      "teacher"
+    ]
+  },
+  "lehrerin": {
+    "pos": "noun",
+    "glosses": [
+      "female teacher"
+    ]
+  },
+  "schule": {
+    "pos": "noun",
+    "glosses": [
+      "school"
+    ]
+  },
+  "kindergarten": {
+    "pos": "noun",
+    "glosses": [
+      "kindergarten",
+      "nursery"
+    ]
+  },
+  "krankenhaus": {
+    "pos": "noun",
+    "glosses": [
+      "hospital"
+    ]
+  },
+  "urlaub": {
+    "pos": "noun",
+    "glosses": [
+      "vacation",
+      "holiday"
+    ]
+  },
+  "strand": {
+    "pos": "noun",
+    "glosses": [
+      "beach"
+    ]
+  },
+  "meer": {
+    "pos": "noun",
+    "glosses": [
+      "sea",
+      "ocean"
+    ]
+  },
+  "see": {
+    "pos": "noun",
+    "glosses": [
+      "lake"
+    ]
+  },
+  "fluss": {
+    "pos": "noun",
+    "glosses": [
+      "river"
+    ]
+  },
+  "berg": {
+    "pos": "noun",
+    "glosses": [
+      "mountain"
+    ]
+  },
+  "wald": {
+    "pos": "noun",
+    "glosses": [
+      "forest",
+      "woods"
+    ]
+  },
+  "stadt": {
+    "pos": "noun",
+    "glosses": [
+      "city",
+      "town"
+    ]
+  },
+  "dorf": {
+    "pos": "noun",
+    "glosses": [
+      "village"
+    ]
+  },
+  "straße": {
+    "pos": "noun",
+    "glosses": [
+      "street",
+      "road"
+    ]
+  },
+  "weg": {
+    "pos": "noun",
+    "glosses": [
+      "path",
+      "way"
+    ]
+  },
+  "brücke": {
+    "pos": "noun",
+    "glosses": [
+      "bridge"
+    ]
+  },
+  "post": {
+    "pos": "noun",
+    "glosses": [
+      "mail",
+      "post office"
+    ]
+  },
+  "brief": {
+    "pos": "noun",
+    "glosses": [
+      "letter"
+    ]
+  },
+  "paket": {
+    "pos": "noun",
+    "glosses": [
+      "package",
+      "parcel"
+    ]
+  },
+  "geschenk": {
+    "pos": "noun",
+    "glosses": [
+      "gift",
+      "present"
+    ]
+  },
+  "geburtstag": {
+    "pos": "noun",
+    "glosses": [
+      "birthday"
+    ]
+  },
+  "weihnachten": {
+    "pos": "noun",
+    "glosses": [
+      "Christmas"
+    ]
+  },
+  "ostern": {
+    "pos": "noun",
+    "glosses": [
+      "Easter"
+    ]
+  },
+  "party": {
+    "pos": "noun",
+    "glosses": [
+      "party"
+    ]
+  },
+  "fest": {
+    "pos": "noun",
+    "glosses": [
+      "festival",
+      "party",
+      "celebration"
+    ]
+  },
+  "mensch": {
+    "pos": "noun",
+    "glosses": [
+      "human",
+      "person"
+    ]
+  },
+  "leute": {
+    "pos": "noun",
+    "glosses": [
+      "people"
+    ]
+  },
+  "mann": {
+    "pos": "noun",
+    "glosses": [
+      "man",
+      "husband"
+    ]
+  },
+  "frau": {
+    "pos": "noun",
+    "glosses": [
+      "woman",
+      "wife",
+      "Mrs."
+    ]
+  },
+  "kind": {
+    "pos": "noun",
+    "glosses": [
+      "child",
+      "kid"
+    ]
+  },
+  "baby": {
+    "pos": "noun",
+    "glosses": [
+      "baby"
+    ]
+  },
+  "junge": {
+    "pos": "noun",
+    "glosses": [
+      "boy"
+    ]
+  },
+  "mädchen": {
+    "pos": "noun",
+    "glosses": [
+      "girl"
+    ]
+  },
+  "eltern": {
+    "pos": "noun",
+    "glosses": [
+      "parents"
+    ]
+  },
+  "familie": {
+    "pos": "noun",
+    "glosses": [
+      "family"
+    ]
+  },
+  "sohn": {
+    "pos": "noun",
+    "glosses": [
+      "son"
+    ]
+  },
+  "tochter": {
+    "pos": "noun",
+    "glosses": [
+      "daughter"
+    ]
+  },
+  "onkel": {
+    "pos": "noun",
+    "glosses": [
+      "uncle"
+    ]
+  },
+  "tante": {
+    "pos": "noun",
+    "glosses": [
+      "aunt"
+    ]
+  },
+  "cousin": {
+    "pos": "noun",
+    "glosses": [
+      "cousin"
+    ]
+  },
+  "kopf": {
+    "pos": "noun",
+    "glosses": [
+      "head"
+    ]
+  },
+  "haar": {
+    "pos": "noun",
+    "glosses": [
+      "hair"
+    ]
+  },
+  "auge": {
+    "pos": "noun",
+    "glosses": [
+      "eye"
+    ]
+  },
+  "ohr": {
+    "pos": "noun",
+    "glosses": [
+      "ear"
+    ]
+  },
+  "nase": {
+    "pos": "noun",
+    "glosses": [
+      "nose"
+    ]
+  },
+  "mund": {
+    "pos": "noun",
+    "glosses": [
+      "mouth"
+    ]
+  },
+  "zahn": {
+    "pos": "noun",
+    "glosses": [
+      "tooth"
+    ]
+  },
+  "zunge": {
+    "pos": "noun",
+    "glosses": [
+      "tongue"
+    ]
+  },
+  "hals": {
+    "pos": "noun",
+    "glosses": [
+      "neck",
+      "throat"
+    ]
+  },
+  "hand": {
+    "pos": "noun",
+    "glosses": [
+      "hand"
+    ]
+  },
+  "arm": {
+    "pos": "noun",
+    "glosses": [
+      "arm"
+    ]
+  },
+  "finger": {
+    "pos": "noun",
+    "glosses": [
+      "finger"
+    ]
+  },
+  "fuß": {
+    "pos": "noun",
+    "glosses": [
+      "foot"
+    ]
+  },
+  "bein": {
+    "pos": "noun",
+    "glosses": [
+      "leg"
+    ]
+  },
+  "bauch": {
+    "pos": "noun",
+    "glosses": [
+      "belly",
+      "stomach",
+      "tummy"
+    ]
+  },
+  "rücken": {
+    "pos": "noun",
+    "glosses": [
+      "back"
+    ]
+  },
+  "herz": {
+    "pos": "noun",
+    "glosses": [
+      "heart"
+    ]
+  },
+  "stimme": {
+    "pos": "noun",
+    "glosses": [
+      "voice"
+    ]
+  },
+  "name": {
+    "pos": "noun",
+    "glosses": [
+      "name"
+    ]
+  },
+  "idee": {
+    "pos": "noun",
+    "glosses": [
+      "idea"
+    ]
+  },
+  "problem": {
+    "pos": "noun",
+    "glosses": [
+      "problem"
+    ]
+  },
+  "frage": {
+    "pos": "noun",
+    "glosses": [
+      "question"
+    ]
+  },
+  "antwort": {
+    "pos": "noun",
+    "glosses": [
+      "answer"
+    ]
+  },
+  "glück": {
+    "pos": "noun",
+    "glosses": [
+      "luck",
+      "happiness"
+    ]
+  },
+  "zeit": {
+    "pos": "noun",
+    "glosses": [
+      "time"
+    ]
+  },
+  "tag": {
+    "pos": "noun",
+    "glosses": [
+      "day"
+    ]
+  },
+  "nacht": {
+    "pos": "noun",
+    "glosses": [
+      "night"
+    ]
+  },
+  "morgen": {
+    "pos": "noun",
+    "glosses": [
+      "morning"
+    ]
+  },
+  "vormittag": {
+    "pos": "noun",
+    "glosses": [
+      "late morning"
+    ]
+  },
+  "mittag": {
+    "pos": "noun",
+    "glosses": [
+      "noon",
+      "midday"
+    ]
+  },
+  "nachmittag": {
+    "pos": "noun",
+    "glosses": [
+      "afternoon"
+    ]
+  },
+  "abend": {
+    "pos": "noun",
+    "glosses": [
+      "evening"
+    ]
+  },
+  "woche": {
+    "pos": "noun",
+    "glosses": [
+      "week"
+    ]
+  },
+  "monat": {
+    "pos": "noun",
+    "glosses": [
+      "month"
+    ]
+  },
+  "jahr": {
+    "pos": "noun",
+    "glosses": [
+      "year"
+    ]
+  },
+  "stunde": {
+    "pos": "noun",
+    "glosses": [
+      "hour"
+    ]
+  },
+  "minute": {
+    "pos": "noun",
+    "glosses": [
+      "minute"
+    ]
+  },
+  "sekunde": {
+    "pos": "noun",
+    "glosses": [
+      "second"
+    ]
+  },
+  "moment": {
+    "pos": "noun",
+    "glosses": [
+      "moment"
+    ]
+  },
+  "augenblick": {
+    "pos": "noun",
+    "glosses": [
+      "moment",
+      "instant"
+    ]
+  },
+  "montag": {
+    "pos": "noun",
+    "glosses": [
+      "Monday"
+    ]
+  },
+  "dienstag": {
+    "pos": "noun",
+    "glosses": [
+      "Tuesday"
+    ]
+  },
+  "mittwoch": {
+    "pos": "noun",
+    "glosses": [
+      "Wednesday"
+    ]
+  },
+  "donnerstag": {
+    "pos": "noun",
+    "glosses": [
+      "Thursday"
+    ]
+  },
+  "freitag": {
+    "pos": "noun",
+    "glosses": [
+      "Friday"
+    ]
+  },
+  "samstag": {
+    "pos": "noun",
+    "glosses": [
+      "Saturday"
+    ]
+  },
+  "sonntag": {
+    "pos": "noun",
+    "glosses": [
+      "Sunday"
+    ]
+  },
+  "wochenende": {
+    "pos": "noun",
+    "glosses": [
+      "weekend"
+    ]
+  },
+  "frühling": {
+    "pos": "noun",
+    "glosses": [
+      "spring"
+    ]
+  },
+  "sommer": {
+    "pos": "noun",
+    "glosses": [
+      "summer"
+    ]
+  },
+  "herbst": {
+    "pos": "noun",
+    "glosses": [
+      "autumn",
+      "fall"
+    ]
+  },
+  "winter": {
+    "pos": "noun",
+    "glosses": [
+      "winter"
+    ]
+  },
+  "mal": {
+    "pos": "noun",
+    "glosses": [
+      "time",
+      "occurrence"
+    ]
+  },
+  "sein": {
+    "pos": "verb",
+    "glosses": [
+      "to be",
+      "exist"
+    ]
+  },
+  "haben": {
+    "pos": "verb",
+    "glosses": [
+      "to have",
+      "possess"
+    ]
+  },
+  "werden": {
+    "pos": "verb",
+    "glosses": [
+      "to become",
+      "will",
+      "grow"
+    ]
+  },
+  "können": {
+    "pos": "verb",
+    "glosses": [
+      "can",
+      "to be able to"
+    ]
+  },
+  "müssen": {
+    "pos": "verb",
+    "glosses": [
+      "must",
+      "to have to"
+    ]
+  },
+  "wollen": {
+    "pos": "verb",
+    "glosses": [
+      "to want",
+      "intend"
+    ]
+  },
+  "sollen": {
+    "pos": "verb",
+    "glosses": [
+      "should",
+      "supposed to"
+    ]
+  },
+  "dürfen": {
+    "pos": "verb",
+    "glosses": [
+      "may",
+      "allowed to"
+    ]
+  },
+  "mögen": {
+    "pos": "verb",
+    "glosses": [
+      "to like"
+    ]
+  },
+  "möchten": {
+    "pos": "verb",
+    "glosses": [
+      "would like"
+    ]
+  },
+  "gehen": {
+    "pos": "verb",
+    "glosses": [
+      "to go",
+      "walk"
+    ]
+  },
+  "kommen": {
+    "pos": "verb",
+    "glosses": [
+      "to come",
+      "arrive"
+    ]
+  },
+  "sehen": {
+    "pos": "verb",
+    "glosses": [
+      "to see",
+      "look"
+    ]
+  },
+  "schauen": {
+    "pos": "verb",
+    "glosses": [
+      "to look",
+      "watch"
+    ]
+  },
+  "gucken": {
+    "pos": "verb",
+    "glosses": [
+      "to look",
+      "peek"
+    ]
+  },
+  "hören": {
+    "pos": "verb",
+    "glosses": [
+      "to hear",
+      "listen"
+    ]
+  },
+  "sprechen": {
+    "pos": "verb",
+    "glosses": [
+      "to speak",
+      "talk"
+    ]
+  },
+  "reden": {
+    "pos": "verb",
+    "glosses": [
+      "to talk",
+      "chat"
+    ]
+  },
+  "sagen": {
+    "pos": "verb",
+    "glosses": [
+      "to say",
+      "tell"
+    ]
+  },
+  "erzählen": {
+    "pos": "verb",
+    "glosses": [
+      "to tell",
+      "narrate"
+    ]
+  },
+  "fragen": {
+    "pos": "verb",
+    "glosses": [
+      "to ask"
+    ]
+  },
+  "antworten": {
+    "pos": "verb",
+    "glosses": [
+      "to answer",
+      "reply"
+    ]
+  },
+  "rufen": {
+    "pos": "verb",
+    "glosses": [
+      "to call",
+      "shout"
+    ]
+  },
+  "schreien": {
+    "pos": "verb",
+    "glosses": [
+      "to scream",
+      "shout"
+    ]
+  },
+  "lachen": {
+    "pos": "verb",
+    "glosses": [
+      "to laugh"
+    ]
+  },
+  "lächeln": {
+    "pos": "verb",
+    "glosses": [
+      "to smile"
+    ]
+  },
+  "weinen": {
+    "pos": "verb",
+    "glosses": [
+      "to cry",
+      "weep"
+    ]
+  },
+  "machen": {
+    "pos": "verb",
+    "glosses": [
+      "to make",
+      "do"
+    ]
+  },
+  "tun": {
+    "pos": "verb",
+    "glosses": [
+      "to do"
+    ]
+  },
+  "spielen": {
+    "pos": "verb",
+    "glosses": [
+      "to play"
+    ]
+  },
+  "arbeiten": {
+    "pos": "verb",
+    "glosses": [
+      "to work"
+    ]
+  },
+  "lernen": {
+    "pos": "verb",
+    "glosses": [
+      "to learn",
+      "study"
+    ]
+  },
+  "lesen": {
+    "pos": "verb",
+    "glosses": [
+      "to read"
+    ]
+  },
+  "schreiben": {
+    "pos": "verb",
+    "glosses": [
+      "to write"
+    ]
+  },
+  "malen": {
+    "pos": "verb",
+    "glosses": [
+      "to paint",
+      "draw"
+    ]
+  },
+  "zeichnen": {
+    "pos": "verb",
+    "glosses": [
+      "to draw",
+      "sketch"
+    ]
+  },
+  "singen": {
+    "pos": "verb",
+    "glosses": [
+      "to sing"
+    ]
+  },
+  "tanzen": {
+    "pos": "verb",
+    "glosses": [
+      "to dance"
+    ]
+  },
+  "springen": {
+    "pos": "verb",
+    "glosses": [
+      "to jump",
+      "hop"
+    ]
+  },
+  "hüpfen": {
+    "pos": "verb",
+    "glosses": [
+      "to hop",
+      "skip"
+    ]
+  },
+  "laufen": {
+    "pos": "verb",
+    "glosses": [
+      "to run",
+      "walk"
+    ]
+  },
+  "rennen": {
+    "pos": "verb",
+    "glosses": [
+      "to run",
+      "race"
+    ]
+  },
+  "schwimmen": {
+    "pos": "verb",
+    "glosses": [
+      "to swim"
+    ]
+  },
+  "tauchen": {
+    "pos": "verb",
+    "glosses": [
+      "to dive"
+    ]
+  },
+  "fliegen": {
+    "pos": "verb",
+    "glosses": [
+      "to fly"
+    ]
+  },
+  "fahren": {
+    "pos": "verb",
+    "glosses": [
+      "to drive",
+      "ride",
+      "travel"
+    ]
+  },
+  "reiten": {
+    "pos": "verb",
+    "glosses": [
+      "to ride a horse"
+    ]
+  },
+  "sitzen": {
+    "pos": "verb",
+    "glosses": [
+      "to sit"
+    ]
+  },
+  "stehen": {
+    "pos": "verb",
+    "glosses": [
+      "to stand"
+    ]
+  },
+  "liegen": {
+    "pos": "verb",
+    "glosses": [
+      "to lie down"
+    ]
+  },
+  "schlafen": {
+    "pos": "verb",
+    "glosses": [
+      "to sleep"
+    ]
+  },
+  "aufwachen": {
+    "pos": "verb",
+    "glosses": [
+      "to wake up"
+    ]
+  },
+  "aufstehen": {
+    "pos": "verb",
+    "glosses": [
+      "to get up",
+      "stand up"
+    ]
+  },
+  "einschlafen": {
+    "pos": "verb",
+    "glosses": [
+      "to fall asleep"
+    ]
+  },
+  "essen": {
+    "pos": "verb",
+    "glosses": [
+      "to eat"
+    ]
+  },
+  "trinken": {
+    "pos": "verb",
+    "glosses": [
+      "to drink"
+    ]
+  },
+  "kochen": {
+    "pos": "verb",
+    "glosses": [
+      "to cook"
+    ]
+  },
+  "backen": {
+    "pos": "verb",
+    "glosses": [
+      "to bake"
+    ]
+  },
+  "frühstücken": {
+    "pos": "verb",
+    "glosses": [
+      "to eat breakfast"
+    ]
+  },
+  "nehmen": {
+    "pos": "verb",
+    "glosses": [
+      "to take"
+    ]
+  },
+  "geben": {
+    "pos": "verb",
+    "glosses": [
+      "to give"
+    ]
+  },
+  "bringen": {
+    "pos": "verb",
+    "glosses": [
+      "to bring",
+      "carry"
+    ]
+  },
+  "holen": {
+    "pos": "verb",
+    "glosses": [
+      "to get",
+      "fetch"
+    ]
+  },
+  "tragen": {
+    "pos": "verb",
+    "glosses": [
+      "to wear",
+      "carry"
+    ]
+  },
+  "anziehen": {
+    "pos": "verb",
+    "glosses": [
+      "to put on",
+      "dress"
+    ]
+  },
+  "ausziehen": {
+    "pos": "verb",
+    "glosses": [
+      "to take off",
+      "undress"
+    ]
+  },
+  "waschen": {
+    "pos": "verb",
+    "glosses": [
+      "to wash"
+    ]
+  },
+  "putzen": {
+    "pos": "verb",
+    "glosses": [
+      "to clean",
+      "brush"
+    ]
+  },
+  "saubermachen": {
+    "pos": "verb",
+    "glosses": [
+      "to clean up"
+    ]
+  },
+  "aufräumen": {
+    "pos": "verb",
+    "glosses": [
+      "to tidy up"
+    ]
+  },
+  "finden": {
+    "pos": "verb",
+    "glosses": [
+      "to find"
+    ]
+  },
+  "suchen": {
+    "pos": "verb",
+    "glosses": [
+      "to look for",
+      "search"
+    ]
+  },
+  "verlieren": {
+    "pos": "verb",
+    "glosses": [
+      "to lose"
+    ]
+  },
+  "vergessen": {
+    "pos": "verb",
+    "glosses": [
+      "to forget"
+    ]
+  },
+  "erinnern": {
+    "pos": "verb",
+    "glosses": [
+      "to remember",
+      "remind"
+    ]
+  },
+  "denken": {
+    "pos": "verb",
+    "glosses": [
+      "to think"
+    ]
+  },
+  "glauben": {
+    "pos": "verb",
+    "glosses": [
+      "to believe"
+    ]
+  },
+  "wissen": {
+    "pos": "verb",
+    "glosses": [
+      "to know"
+    ]
+  },
+  "kennen": {
+    "pos": "verb",
+    "glosses": [
+      "to know",
+      "be familiar with"
+    ]
+  },
+  "verstehen": {
+    "pos": "verb",
+    "glosses": [
+      "to understand"
+    ]
+  },
+  "helfen": {
+    "pos": "verb",
+    "glosses": [
+      "to help",
+      "assist"
+    ]
+  },
+  "brauchen": {
+    "pos": "verb",
+    "glosses": [
+      "to need",
+      "require"
+    ]
+  },
+  "lieben": {
+    "pos": "verb",
+    "glosses": [
+      "to love"
+    ]
+  },
+  "hassen": {
+    "pos": "verb",
+    "glosses": [
+      "to hate"
+    ]
+  },
+  "freuen": {
+    "pos": "verb",
+    "glosses": [
+      "to be glad",
+      "look forward to"
+    ]
+  },
+  "hoffen": {
+    "pos": "verb",
+    "glosses": [
+      "to hope"
+    ]
+  },
+  "wünschen": {
+    "pos": "verb",
+    "glosses": [
+      "to wish"
+    ]
+  },
+  "warten": {
+    "pos": "verb",
+    "glosses": [
+      "to wait"
+    ]
+  },
+  "zeigen": {
+    "pos": "verb",
+    "glosses": [
+      "to show",
+      "point"
+    ]
+  },
+  "öffnen": {
+    "pos": "verb",
+    "glosses": [
+      "to open"
+    ]
+  },
+  "aufmachen": {
+    "pos": "verb",
+    "glosses": [
+      "to open"
+    ]
+  },
+  "schließen": {
+    "pos": "verb",
+    "glosses": [
+      "to close",
+      "shut"
+    ]
+  },
+  "zumachen": {
+    "pos": "verb",
+    "glosses": [
+      "to close",
+      "shut"
+    ]
+  },
+  "kaufen": {
+    "pos": "verb",
+    "glosses": [
+      "to buy"
+    ]
+  },
+  "verkaufen": {
+    "pos": "verb",
+    "glosses": [
+      "to sell"
+    ]
+  },
+  "bezahlen": {
+    "pos": "verb",
+    "glosses": [
+      "to pay"
+    ]
+  },
+  "kosten": {
+    "pos": "verb",
+    "glosses": [
+      "to cost"
+    ]
+  },
+  "probieren": {
+    "pos": "verb",
+    "glosses": [
+      "to try",
+      "taste"
+    ]
+  },
+  "versuchen": {
+    "pos": "verb",
+    "glosses": [
+      "to try",
+      "attempt"
+    ]
+  },
+  "anfangen": {
+    "pos": "verb",
+    "glosses": [
+      "to begin",
+      "start"
+    ]
+  },
+  "beginnen": {
+    "pos": "verb",
+    "glosses": [
+      "to begin",
+      "start"
+    ]
+  },
+  "aufhören": {
+    "pos": "verb",
+    "glosses": [
+      "to stop",
+      "quit"
+    ]
+  },
+  "stoppen": {
+    "pos": "verb",
+    "glosses": [
+      "to stop"
+    ]
+  },
+  "halten": {
+    "pos": "verb",
+    "glosses": [
+      "to hold",
+      "stop"
+    ]
+  },
+  "fallen": {
+    "pos": "verb",
+    "glosses": [
+      "to fall"
+    ]
+  },
+  "werfen": {
+    "pos": "verb",
+    "glosses": [
+      "to throw"
+    ]
+  },
+  "fangen": {
+    "pos": "verb",
+    "glosses": [
+      "to catch"
+    ]
+  },
+  "bauen": {
+    "pos": "verb",
+    "glosses": [
+      "to build"
+    ]
+  },
+  "reparieren": {
+    "pos": "verb",
+    "glosses": [
+      "to repair",
+      "fix"
+    ]
+  },
+  "retten": {
+    "pos": "verb",
+    "glosses": [
+      "to save",
+      "rescue"
+    ]
+  },
+  "drücken": {
+    "pos": "verb",
+    "glosses": [
+      "to press",
+      "push",
+      "hug"
+    ]
+  },
+  "ziehen": {
+    "pos": "verb",
+    "glosses": [
+      "to pull",
+      "move"
+    ]
+  },
+  "schieben": {
+    "pos": "verb",
+    "glosses": [
+      "to push",
+      "shove"
+    ]
+  },
+  "passen": {
+    "pos": "verb",
+    "glosses": [
+      "to fit",
+      "suit"
+    ]
+  },
+  "funktionieren": {
+    "pos": "verb",
+    "glosses": [
+      "to work",
+      "function"
+    ]
+  },
+  "klappen": {
+    "pos": "verb",
+    "glosses": [
+      "to work out",
+      "go well"
+    ]
+  },
+  "gehören": {
+    "pos": "verb",
+    "glosses": [
+      "to belong to"
+    ]
+  },
+  "folgen": {
+    "pos": "verb",
+    "glosses": [
+      "to follow"
+    ]
+  },
+  "bleiben": {
+    "pos": "verb",
+    "glosses": [
+      "to stay",
+      "remain"
+    ]
+  },
+  "wohnen": {
+    "pos": "verb",
+    "glosses": [
+      "to live",
+      "reside"
+    ]
+  },
+  "leben": {
+    "pos": "verb",
+    "glosses": [
+      "to live"
+    ]
+  },
+  "sterben": {
+    "pos": "verb",
+    "glosses": [
+      "to die"
+    ]
+  },
+  "regnen": {
+    "pos": "verb",
+    "glosses": [
+      "to rain"
+    ]
+  },
+  "schneien": {
+    "pos": "verb",
+    "glosses": [
+      "to snow"
+    ]
+  },
+  "scheinen": {
+    "pos": "verb",
+    "glosses": [
+      "to shine",
+      "seem"
+    ]
+  },
+  "gut": {
+    "pos": "adj",
+    "glosses": [
+      "good",
+      "well",
+      "fine"
+    ]
+  },
+  "besser": {
+    "pos": "adj",
+    "glosses": [
+      "better"
+    ]
+  },
+  "beste": {
+    "pos": "adj",
+    "glosses": [
+      "best"
+    ]
+  },
+  "schlecht": {
+    "pos": "adj",
+    "glosses": [
+      "bad",
+      "poor"
+    ]
+  },
+  "groß": {
+    "pos": "adj",
+    "glosses": [
+      "big",
+      "large",
+      "tall"
+    ]
+  },
+  "größer": {
+    "pos": "adj",
+    "glosses": [
+      "bigger",
+      "taller"
+    ]
+  },
+  "klein": {
+    "pos": "adj",
+    "glosses": [
+      "small",
+      "little"
+    ]
+  },
+  "kleiner": {
+    "pos": "adj",
+    "glosses": [
+      "smaller"
+    ]
+  },
+  "schön": {
+    "pos": "adj",
+    "glosses": [
+      "beautiful",
+      "nice",
+      "lovely"
+    ]
+  },
+  "hässlich": {
+    "pos": "adj",
+    "glosses": [
+      "ugly"
+    ]
+  },
+  "neu": {
+    "pos": "adj",
+    "glosses": [
+      "new"
+    ]
+  },
+  "alt": {
+    "pos": "adj",
+    "glosses": [
+      "old"
+    ]
+  },
+  "jung": {
+    "pos": "adj",
+    "glosses": [
+      "young"
+    ]
+  },
+  "schnell": {
+    "pos": "adj",
+    "glosses": [
+      "fast",
+      "quick"
+    ]
+  },
+  "langsam": {
+    "pos": "adj",
+    "glosses": [
+      "slow"
+    ]
+  },
+  "laut": {
+    "pos": "adj",
+    "glosses": [
+      "loud",
+      "noisy"
+    ]
+  },
+  "leise": {
+    "pos": "adj",
+    "glosses": [
+      "quiet",
+      "soft"
+    ]
+  },
+  "warm": {
+    "pos": "adj",
+    "glosses": [
+      "warm"
+    ]
+  },
+  "heiß": {
+    "pos": "adj",
+    "glosses": [
+      "hot"
+    ]
+  },
+  "kalt": {
+    "pos": "adj",
+    "glosses": [
+      "cold"
+    ]
+  },
+  "kühl": {
+    "pos": "adj",
+    "glosses": [
+      "cool"
+    ]
+  },
+  "lustig": {
+    "pos": "adj",
+    "glosses": [
+      "funny",
+      "amusing"
+    ]
+  },
+  "komisch": {
+    "pos": "adj",
+    "glosses": [
+      "funny",
+      "strange",
+      "weird"
+    ]
+  },
+  "traurig": {
+    "pos": "adj",
+    "glosses": [
+      "sad"
+    ]
+  },
+  "fröhlich": {
+    "pos": "adj",
+    "glosses": [
+      "cheerful",
+      "happy"
+    ]
+  },
+  "glücklich": {
+    "pos": "adj",
+    "glosses": [
+      "happy",
+      "lucky"
+    ]
+  },
+  "müde": {
+    "pos": "adj",
+    "glosses": [
+      "tired",
+      "sleepy"
+    ]
+  },
+  "wach": {
+    "pos": "adj",
+    "glosses": [
+      "awake"
+    ]
+  },
+  "toll": {
+    "pos": "adj",
+    "glosses": [
+      "great",
+      "terrific",
+      "awesome"
+    ]
+  },
+  "prima": {
+    "pos": "adj",
+    "glosses": [
+      "great",
+      "fine"
+    ]
+  },
+  "super": {
+    "pos": "adj",
+    "glosses": [
+      "super",
+      "great"
+    ]
+  },
+  "wunderbar": {
+    "pos": "adj",
+    "glosses": [
+      "wonderful"
+    ]
+  },
+  "fantastisch": {
+    "pos": "adj",
+    "glosses": [
+      "fantastic"
+    ]
+  },
+  "wichtig": {
+    "pos": "adj",
+    "glosses": [
+      "important"
+    ]
+  },
+  "richtig": {
+    "pos": "adj",
+    "glosses": [
+      "correct",
+      "right",
+      "real"
+    ]
+  },
+  "falsch": {
+    "pos": "adj",
+    "glosses": [
+      "wrong",
+      "false"
+    ]
+  },
+  "einfach": {
+    "pos": "adj",
+    "glosses": [
+      "simple",
+      "easy"
+    ]
+  },
+  "schwer": {
+    "pos": "adj",
+    "glosses": [
+      "heavy",
+      "difficult",
+      "hard"
+    ]
+  },
+  "leicht": {
+    "pos": "adj",
+    "glosses": [
+      "light",
+      "easy"
+    ]
+  },
+  "stark": {
+    "pos": "adj",
+    "glosses": [
+      "strong"
+    ]
+  },
+  "schwach": {
+    "pos": "adj",
+    "glosses": [
+      "weak"
+    ]
+  },
+  "sauber": {
+    "pos": "adj",
+    "glosses": [
+      "clean"
+    ]
+  },
+  "schmutzig": {
+    "pos": "adj",
+    "glosses": [
+      "dirty"
+    ]
+  },
+  "dreckig": {
+    "pos": "adj",
+    "glosses": [
+      "dirty",
+      "filthy"
+    ]
+  },
+  "matschig": {
+    "pos": "adj",
+    "glosses": [
+      "muddy",
+      "slushy"
+    ]
+  },
+  "nass": {
+    "pos": "adj",
+    "glosses": [
+      "wet"
+    ]
+  },
+  "trocken": {
+    "pos": "adj",
+    "glosses": [
+      "dry"
+    ]
+  },
+  "fertig": {
+    "pos": "adj",
+    "glosses": [
+      "ready",
+      "done",
+      "finished"
+    ]
+  },
+  "bereit": {
+    "pos": "adj",
+    "glosses": [
+      "ready",
+      "prepared"
+    ]
+  },
+  "voll": {
+    "pos": "adj",
+    "glosses": [
+      "full"
+    ]
+  },
+  "leer": {
+    "pos": "adj",
+    "glosses": [
+      "empty"
+    ]
+  },
+  "ganz": {
+    "pos": "adj",
+    "glosses": [
+      "whole",
+      "entire",
+      "quite"
+    ]
+  },
+  "kaputt": {
+    "pos": "adj",
+    "glosses": [
+      "broken"
+    ]
+  },
+  "süß": {
+    "pos": "adj",
+    "glosses": [
+      "sweet",
+      "cute"
+    ]
+  },
+  "lecker": {
+    "pos": "adj",
+    "glosses": [
+      "delicious",
+      "tasty"
+    ]
+  },
+  "hungrig": {
+    "pos": "adj",
+    "glosses": [
+      "hungry"
+    ]
+  },
+  "durstig": {
+    "pos": "adj",
+    "glosses": [
+      "thirsty"
+    ]
+  },
+  "bunt": {
+    "pos": "adj",
+    "glosses": [
+      "colorful"
+    ]
+  },
+  "rot": {
+    "pos": "adj",
+    "glosses": [
+      "red"
+    ]
+  },
+  "blau": {
+    "pos": "adj",
+    "glosses": [
+      "blue"
+    ]
+  },
+  "grün": {
+    "pos": "adj",
+    "glosses": [
+      "green"
+    ]
+  },
+  "gelb": {
+    "pos": "adj",
+    "glosses": [
+      "yellow"
+    ]
+  },
+  "orange": {
+    "pos": "adj",
+    "glosses": [
+      "orange"
+    ]
+  },
+  "rosa": {
+    "pos": "adj",
+    "glosses": [
+      "pink"
+    ]
+  },
+  "lila": {
+    "pos": "adj",
+    "glosses": [
+      "purple"
+    ]
+  },
+  "braun": {
+    "pos": "adj",
+    "glosses": [
+      "brown"
+    ]
+  },
+  "schwarz": {
+    "pos": "adj",
+    "glosses": [
+      "black"
+    ]
+  },
+  "weiß": {
+    "pos": "adj",
+    "glosses": [
+      "white"
+    ]
+  },
+  "grau": {
+    "pos": "adj",
+    "glosses": [
+      "grey",
+      "gray"
+    ]
+  },
+  "hell": {
+    "pos": "adj",
+    "glosses": [
+      "bright",
+      "light"
+    ]
+  },
+  "dunkel": {
+    "pos": "adj",
+    "glosses": [
+      "dark"
+    ]
+  },
+  "teuer": {
+    "pos": "adj",
+    "glosses": [
+      "expensive"
+    ]
+  },
+  "billig": {
+    "pos": "adj",
+    "glosses": [
+      "cheap"
+    ]
+  },
+  "nah": {
+    "pos": "adj",
+    "glosses": [
+      "near",
+      "close"
+    ]
+  },
+  "weit": {
+    "pos": "adj",
+    "glosses": [
+      "far",
+      "wide"
+    ]
+  },
+  "spät": {
+    "pos": "adj",
+    "glosses": [
+      "late"
+    ]
+  },
+  "früh": {
+    "pos": "adj",
+    "glosses": [
+      "early"
+    ]
+  },
+  "sehr": {
+    "pos": "adv",
+    "glosses": [
+      "very",
+      "greatly"
+    ]
+  },
+  "viel": {
+    "pos": "adv",
+    "glosses": [
+      "much",
+      "a lot"
+    ]
+  },
+  "viele": {
+    "pos": "pron",
+    "glosses": [
+      "many"
+    ]
+  },
+  "wenig": {
+    "pos": "adv",
+    "glosses": [
+      "little",
+      "few"
+    ]
+  },
+  "etwas": {
+    "pos": "pron",
+    "glosses": [
+      "something",
+      "a bit",
+      "some"
+    ]
+  },
+  "nichts": {
+    "pos": "pron",
+    "glosses": [
+      "nothing"
+    ]
+  },
+  "alles": {
+    "pos": "pron",
+    "glosses": [
+      "everything",
+      "all"
+    ]
+  },
+  "alle": {
+    "pos": "pron",
+    "glosses": [
+      "all",
+      "everyone"
+    ]
+  },
+  "jeder": {
+    "pos": "pron",
+    "glosses": [
+      "everyone",
+      "every"
+    ]
+  },
+  "jede": {
+    "pos": "pron",
+    "glosses": [
+      "everyone",
+      "every"
+    ]
+  },
+  "jedes": {
+    "pos": "pron",
+    "glosses": [
+      "everyone",
+      "every"
+    ]
+  },
+  "jemand": {
+    "pos": "pron",
+    "glosses": [
+      "someone",
+      "somebody"
+    ]
+  },
+  "niemand": {
+    "pos": "pron",
+    "glosses": [
+      "nobody",
+      "no one"
+    ]
+  },
+  "auch": {
+    "pos": "adv",
+    "glosses": [
+      "also",
+      "too",
+      "as well"
+    ]
+  },
+  "noch": {
+    "pos": "adv",
+    "glosses": [
+      "still",
+      "yet",
+      "another"
+    ]
+  },
+  "schon": {
+    "pos": "adv",
+    "glosses": [
+      "already",
+      "yet"
+    ]
+  },
+  "immer": {
+    "pos": "adv",
+    "glosses": [
+      "always",
+      "ever"
+    ]
+  },
+  "nie": {
+    "pos": "adv",
+    "glosses": [
+      "never"
+    ]
+  },
+  "niemals": {
+    "pos": "adv",
+    "glosses": [
+      "never"
+    ]
+  },
+  "oft": {
+    "pos": "adv",
+    "glosses": [
+      "often"
+    ]
+  },
+  "manchmal": {
+    "pos": "adv",
+    "glosses": [
+      "sometimes"
+    ]
+  },
+  "selten": {
+    "pos": "adv",
+    "glosses": [
+      "rarely",
+      "seldom"
+    ]
+  },
+  "wieder": {
+    "pos": "adv",
+    "glosses": [
+      "again"
+    ]
+  },
+  "hier": {
+    "pos": "adv",
+    "glosses": [
+      "here"
+    ]
+  },
+  "da": {
+    "pos": "adv",
+    "glosses": [
+      "there",
+      "here",
+      "because"
+    ]
+  },
+  "dort": {
+    "pos": "adv",
+    "glosses": [
+      "there",
+      "over there"
+    ]
+  },
+  "überall": {
+    "pos": "adv",
+    "glosses": [
+      "everywhere"
+    ]
+  },
+  "irgendwo": {
+    "pos": "adv",
+    "glosses": [
+      "somewhere"
+    ]
+  },
+  "nirgendwo": {
+    "pos": "adv",
+    "glosses": [
+      "nowhere"
+    ]
+  },
+  "jetzt": {
+    "pos": "adv",
+    "glosses": [
+      "now"
+    ]
+  },
+  "nun": {
+    "pos": "adv",
+    "glosses": [
+      "now",
+      "well"
+    ]
+  },
+  "heute": {
+    "pos": "adv",
+    "glosses": [
+      "today"
+    ]
+  },
+  "gestern": {
+    "pos": "adv",
+    "glosses": [
+      "yesterday"
+    ]
+  },
+  "morgen_adv": {
+    "pos": "adv",
+    "glosses": [
+      "tomorrow"
+    ]
+  },
+  "bald": {
+    "pos": "adv",
+    "glosses": [
+      "soon"
+    ]
+  },
+  "gleich": {
+    "pos": "adv",
+    "glosses": [
+      "right away",
+      "immediately",
+      "same"
+    ]
+  },
+  "sofort": {
+    "pos": "adv",
+    "glosses": [
+      "immediately",
+      "instantly"
+    ]
+  },
+  "zusammen": {
+    "pos": "adv",
+    "glosses": [
+      "together"
+    ]
+  },
+  "allein": {
+    "pos": "adv",
+    "glosses": [
+      "alone"
+    ]
+  },
+  "alleine": {
+    "pos": "adv",
+    "glosses": [
+      "alone"
+    ]
+  },
+  "gern": {
+    "pos": "adv",
+    "glosses": [
+      "gladly",
+      "fondly",
+      "with pleasure"
+    ]
+  },
+  "gerne": {
+    "pos": "adv",
+    "glosses": [
+      "gladly",
+      "fondly",
+      "with pleasure"
+    ]
+  },
+  "lieber": {
+    "pos": "adv",
+    "glosses": [
+      "rather",
+      "preferably"
+    ]
+  },
+  "vielleicht": {
+    "pos": "adv",
+    "glosses": [
+      "maybe",
+      "perhaps"
+    ]
+  },
+  "natürlich": {
+    "pos": "adv",
+    "glosses": [
+      "of course",
+      "naturally"
+    ]
+  },
+  "wirklich": {
+    "pos": "adv",
+    "glosses": [
+      "really",
+      "truly"
+    ]
+  },
+  "echt": {
+    "pos": "adv",
+    "glosses": [
+      "really",
+      "genuine"
+    ]
+  },
+  "besonders": {
+    "pos": "adv",
+    "glosses": [
+      "especially",
+      "particularly"
+    ]
+  },
+  "genau": {
+    "pos": "adv",
+    "glosses": [
+      "exactly",
+      "precise"
+    ]
+  },
+  "sicher": {
+    "pos": "adv",
+    "glosses": [
+      "sure",
+      "safe",
+      "certainly"
+    ]
+  },
+  "so": {
+    "pos": "adv",
+    "glosses": [
+      "so",
+      "thus",
+      "like this"
+    ]
+  },
+  "nur": {
+    "pos": "adv",
+    "glosses": [
+      "only",
+      "just"
+    ]
+  },
+  "sogar": {
+    "pos": "adv",
+    "glosses": [
+      "even"
+    ]
+  },
+  "nicht": {
+    "pos": "part",
+    "glosses": [
+      "not"
+    ]
+  },
+  "gar": {
+    "pos": "adv",
+    "glosses": [
+      "at all",
+      "even"
+    ]
+  },
+  "kein": {
+    "pos": "art",
+    "glosses": [
+      "no",
+      "not a",
+      "none"
+    ]
+  },
+  "keine": {
+    "pos": "art",
+    "glosses": [
+      "no",
+      "not a",
+      "none"
+    ]
+  },
+  "keinen": {
+    "pos": "art",
+    "glosses": [
+      "no",
+      "not a",
+      "none"
+    ]
+  },
+  "keinem": {
+    "pos": "art",
+    "glosses": [
+      "no",
+      "not a",
+      "none"
+    ]
+  },
+  "keiner": {
+    "pos": "art",
+    "glosses": [
+      "no",
+      "not a",
+      "none"
+    ]
+  },
+  "ja": {
+    "pos": "part",
+    "glosses": [
+      "yes",
+      "indeed"
+    ]
+  },
+  "nein": {
+    "pos": "part",
+    "glosses": [
+      "no"
+    ]
+  },
+  "doch": {
+    "pos": "part",
+    "glosses": [
+      "yes (contradicting no)",
+      "after all",
+      "indeed"
+    ]
+  },
+  "bitte": {
+    "pos": "part",
+    "glosses": [
+      "please",
+      "you're welcome"
+    ]
+  },
+  "danke": {
+    "pos": "part",
+    "glosses": [
+      "thank you",
+      "thanks"
+    ]
+  },
+  "hallo": {
+    "pos": "part",
+    "glosses": [
+      "hello",
+      "hi"
+    ]
+  },
+  "tschüss": {
+    "pos": "part",
+    "glosses": [
+      "bye",
+      "goodbye"
+    ]
+  },
+  "tschuss": {
+    "pos": "part",
+    "glosses": [
+      "bye",
+      "goodbye"
+    ]
+  },
+  "auf wiedersehen": {
+    "pos": "part",
+    "glosses": [
+      "goodbye"
+    ]
+  },
+  "oh": {
+    "pos": "part",
+    "glosses": [
+      "oh"
+    ]
+  },
+  "ah": {
+    "pos": "part",
+    "glosses": [
+      "ah"
+    ]
+  },
+  "hurra": {
+    "pos": "part",
+    "glosses": [
+      "hooray"
+    ]
+  },
+  "oops": {
+    "pos": "part",
+    "glosses": [
+      "oops"
+    ]
+  },
+  "hoppla": {
+    "pos": "part",
+    "glosses": [
+      "oops",
+      "whoops"
+    ]
+  },
+  "mal_part": {
+    "pos": "part",
+    "glosses": [
+      "just",
+      "once",
+      "for a moment"
+    ]
+  },
+  "der": {
+    "pos": "art",
+    "glosses": [
+      "the"
+    ]
+  },
+  "die": {
+    "pos": "art",
+    "glosses": [
+      "the"
+    ]
+  },
+  "das": {
+    "pos": "art",
+    "glosses": [
+      "the"
+    ]
+  },
+  "ein": {
+    "pos": "art",
+    "glosses": [
+      "a",
+      "an",
+      "one"
+    ]
+  },
+  "eine": {
+    "pos": "art",
+    "glosses": [
+      "a",
+      "an",
+      "one"
+    ]
+  },
+  "einer": {
+    "pos": "art",
+    "glosses": [
+      "a",
+      "an",
+      "one"
+    ]
+  },
+  "einem": {
+    "pos": "art",
+    "glosses": [
+      "a",
+      "an",
+      "one"
+    ]
+  },
+  "einen": {
+    "pos": "art",
+    "glosses": [
+      "a",
+      "an",
+      "one"
+    ]
+  },
+  "eines": {
+    "pos": "art",
+    "glosses": [
+      "a",
+      "an",
+      "one"
+    ]
+  },
+  "mein": {
+    "pos": "pron",
+    "glosses": [
+      "my",
+      "mine"
+    ]
+  },
+  "meine": {
+    "pos": "pron",
+    "glosses": [
+      "my"
+    ]
+  },
+  "meinen": {
+    "pos": "pron",
+    "glosses": [
+      "my"
+    ]
+  },
+  "meinem": {
+    "pos": "pron",
+    "glosses": [
+      "my"
+    ]
+  },
+  "meiner": {
+    "pos": "pron",
+    "glosses": [
+      "my"
+    ]
+  },
+  "dein": {
+    "pos": "pron",
+    "glosses": [
+      "your",
+      "yours"
+    ]
+  },
+  "deine": {
+    "pos": "pron",
+    "glosses": [
+      "your"
+    ]
+  },
+  "deinen": {
+    "pos": "pron",
+    "glosses": [
+      "your"
+    ]
+  },
+  "deinem": {
+    "pos": "pron",
+    "glosses": [
+      "your"
+    ]
+  },
+  "deiner": {
+    "pos": "pron",
+    "glosses": [
+      "your"
+    ]
+  },
+  "sein_poss": {
+    "pos": "pron",
+    "glosses": [
+      "his",
+      "its"
+    ]
+  },
+  "seine": {
+    "pos": "pron",
+    "glosses": [
+      "his",
+      "its"
+    ]
+  },
+  "seinen": {
+    "pos": "pron",
+    "glosses": [
+      "his",
+      "its"
+    ]
+  },
+  "seinem": {
+    "pos": "pron",
+    "glosses": [
+      "his",
+      "its"
+    ]
+  },
+  "seiner": {
+    "pos": "pron",
+    "glosses": [
+      "his",
+      "its"
+    ]
+  },
+  "ihr_poss": {
+    "pos": "pron",
+    "glosses": [
+      "her",
+      "their",
+      "your"
+    ]
+  },
+  "ihre": {
+    "pos": "pron",
+    "glosses": [
+      "her",
+      "their",
+      "your"
+    ]
+  },
+  "ihren": {
+    "pos": "pron",
+    "glosses": [
+      "her",
+      "their",
+      "your"
+    ]
+  },
+  "ihrem": {
+    "pos": "pron",
+    "glosses": [
+      "her",
+      "their",
+      "your"
+    ]
+  },
+  "ihrer": {
+    "pos": "pron",
+    "glosses": [
+      "her",
+      "their",
+      "your"
+    ]
+  },
+  "unser": {
+    "pos": "pron",
+    "glosses": [
+      "our",
+      "ours"
+    ]
+  },
+  "unsere": {
+    "pos": "pron",
+    "glosses": [
+      "our"
+    ]
+  },
+  "unseren": {
+    "pos": "pron",
+    "glosses": [
+      "our"
+    ]
+  },
+  "unserem": {
+    "pos": "pron",
+    "glosses": [
+      "our"
+    ]
+  },
+  "unserer": {
+    "pos": "pron",
+    "glosses": [
+      "our"
+    ]
+  },
+  "euer": {
+    "pos": "pron",
+    "glosses": [
+      "your (plural)"
+    ]
+  },
+  "eure": {
+    "pos": "pron",
+    "glosses": [
+      "your (plural)"
+    ]
+  },
+  "euren": {
+    "pos": "pron",
+    "glosses": [
+      "your (plural)"
+    ]
+  },
+  "eurem": {
+    "pos": "pron",
+    "glosses": [
+      "your (plural)"
+    ]
+  },
+  "eurer": {
+    "pos": "pron",
+    "glosses": [
+      "your (plural)"
+    ]
+  },
+  "ich": {
+    "pos": "pron",
+    "glosses": [
+      "I"
+    ]
+  },
+  "mich": {
+    "pos": "pron",
+    "glosses": [
+      "me (accusative)"
+    ]
+  },
+  "mir": {
+    "pos": "pron",
+    "glosses": [
+      "me (dative)"
+    ]
+  },
+  "du": {
+    "pos": "pron",
+    "glosses": [
+      "you"
+    ]
+  },
+  "dich": {
+    "pos": "pron",
+    "glosses": [
+      "you (accusative)"
+    ]
+  },
+  "dir": {
+    "pos": "pron",
+    "glosses": [
+      "you (dative)"
+    ]
+  },
+  "er": {
+    "pos": "pron",
+    "glosses": [
+      "he"
+    ]
+  },
+  "ihn": {
+    "pos": "pron",
+    "glosses": [
+      "him"
+    ]
+  },
+  "ihm": {
+    "pos": "pron",
+    "glosses": [
+      "him (dative)"
+    ]
+  },
+  "sie": {
+    "pos": "pron",
+    "glosses": [
+      "she",
+      "they",
+      "you"
+    ]
+  },
+  "ihnen": {
+    "pos": "pron",
+    "glosses": [
+      "them (dative)",
+      "you (formal)"
+    ]
+  },
+  "es": {
+    "pos": "pron",
+    "glosses": [
+      "it"
+    ]
+  },
+  "wir": {
+    "pos": "pron",
+    "glosses": [
+      "we"
+    ]
+  },
+  "uns": {
+    "pos": "pron",
+    "glosses": [
+      "us"
+    ]
+  },
+  "ihr": {
+    "pos": "pron",
+    "glosses": [
+      "you (plural)"
+    ]
+  },
+  "euch": {
+    "pos": "pron",
+    "glosses": [
+      "you (plural dative/accusative)"
+    ]
+  },
+  "sich": {
+    "pos": "pron",
+    "glosses": [
+      "oneself",
+      "himself",
+      "herself",
+      "themselves"
+    ]
+  },
+  "in": {
+    "pos": "prep",
+    "glosses": [
+      "in",
+      "into"
+    ]
+  },
+  "im": {
+    "pos": "prep",
+    "glosses": [
+      "in the"
+    ]
+  },
+  "ins": {
+    "pos": "prep",
+    "glosses": [
+      "into the"
+    ]
+  },
+  "an": {
+    "pos": "prep",
+    "glosses": [
+      "at",
+      "on",
+      "to"
+    ]
+  },
+  "am": {
+    "pos": "prep",
+    "glosses": [
+      "at the",
+      "on the"
+    ]
+  },
+  "ans": {
+    "pos": "prep",
+    "glosses": [
+      "to the"
+    ]
+  },
+  "auf": {
+    "pos": "prep",
+    "glosses": [
+      "on",
+      "upon",
+      "at"
+    ]
+  },
+  "aufs": {
+    "pos": "prep",
+    "glosses": [
+      "onto the"
+    ]
+  },
+  "mit": {
+    "pos": "prep",
+    "glosses": [
+      "with"
+    ]
+  },
+  "für": {
+    "pos": "prep",
+    "glosses": [
+      "for"
+    ]
+  },
+  "von": {
+    "pos": "prep",
+    "glosses": [
+      "from",
+      "of",
+      "by"
+    ]
+  },
+  "vom": {
+    "pos": "prep",
+    "glosses": [
+      "from the"
+    ]
+  },
+  "zu": {
+    "pos": "prep",
+    "glosses": [
+      "to",
+      "towards",
+      "at",
+      "too"
+    ]
+  },
+  "zum": {
+    "pos": "prep",
+    "glosses": [
+      "to the (masc/neut)"
+    ]
+  },
+  "zur": {
+    "pos": "prep",
+    "glosses": [
+      "to the (fem)"
+    ]
+  },
+  "über": {
+    "pos": "prep",
+    "glosses": [
+      "over",
+      "above",
+      "about"
+    ]
+  },
+  "unter": {
+    "pos": "prep",
+    "glosses": [
+      "under",
+      "below",
+      "among"
+    ]
+  },
+  "vor": {
+    "pos": "prep",
+    "glosses": [
+      "in front of",
+      "before",
+      "ago"
+    ]
+  },
+  "vorm": {
+    "pos": "prep",
+    "glosses": [
+      "in front of the"
+    ]
+  },
+  "hinter": {
+    "pos": "prep",
+    "glosses": [
+      "behind"
+    ]
+  },
+  "hinters": {
+    "pos": "prep",
+    "glosses": [
+      "behind the"
+    ]
+  },
+  "neben": {
+    "pos": "prep",
+    "glosses": [
+      "beside",
+      "next to"
+    ]
+  },
+  "zwischen": {
+    "pos": "prep",
+    "glosses": [
+      "between"
+    ]
+  },
+  "nach": {
+    "pos": "prep",
+    "glosses": [
+      "after",
+      "to",
+      "towards"
+    ]
+  },
+  "bei": {
+    "pos": "prep",
+    "glosses": [
+      "at",
+      "near",
+      "with"
+    ]
+  },
+  "beim": {
+    "pos": "prep",
+    "glosses": [
+      "at the",
+      "while"
+    ]
+  },
+  "aus": {
+    "pos": "prep",
+    "glosses": [
+      "out of",
+      "from"
+    ]
+  },
+  "durch": {
+    "pos": "prep",
+    "glosses": [
+      "through",
+      "by"
+    ]
+  },
+  "um": {
+    "pos": "prep",
+    "glosses": [
+      "around",
+      "at (time)",
+      "for"
+    ]
+  },
+  "ohne": {
+    "pos": "prep",
+    "glosses": [
+      "without"
+    ]
+  },
+  "gegen": {
+    "pos": "prep",
+    "glosses": [
+      "against",
+      "towards"
+    ]
+  },
+  "seit": {
+    "pos": "prep",
+    "glosses": [
+      "since",
+      "for (time)"
+    ]
+  },
+  "ab": {
+    "pos": "prep",
+    "glosses": [
+      "from",
+      "starting at"
+    ]
+  },
+  "bis": {
+    "pos": "prep",
+    "glosses": [
+      "until",
+      "till",
+      "up to"
+    ]
+  },
+  "und": {
+    "pos": "conj",
+    "glosses": [
+      "and"
+    ]
+  },
+  "oder": {
+    "pos": "conj",
+    "glosses": [
+      "or"
+    ]
+  },
+  "aber": {
+    "pos": "conj",
+    "glosses": [
+      "but",
+      "however"
+    ]
+  },
+  "denn": {
+    "pos": "conj",
+    "glosses": [
+      "because",
+      "for"
+    ]
+  },
+  "weil": {
+    "pos": "conj",
+    "glosses": [
+      "because"
+    ]
+  },
+  "wenn": {
+    "pos": "conj",
+    "glosses": [
+      "if",
+      "when",
+      "whenever"
+    ]
+  },
+  "als": {
+    "pos": "conj",
+    "glosses": [
+      "when (past)",
+      "as",
+      "than"
+    ]
+  },
+  "dass": {
+    "pos": "conj",
+    "glosses": [
+      "that"
+    ]
+  },
+  "da_conj": {
+    "pos": "conj",
+    "glosses": [
+      "as",
+      "since"
+    ]
+  },
+  "ob": {
+    "pos": "conj",
+    "glosses": [
+      "whether",
+      "if"
+    ]
+  },
+  "obwohl": {
+    "pos": "conj",
+    "glosses": [
+      "although",
+      "even though"
+    ]
+  },
+  "damit": {
+    "pos": "conj",
+    "glosses": [
+      "so that",
+      "in order that"
+    ]
+  },
+  "bevor": {
+    "pos": "conj",
+    "glosses": [
+      "before"
+    ]
+  },
+  "nachdem": {
+    "pos": "conj",
+    "glosses": [
+      "after"
+    ]
+  },
+  "während": {
+    "pos": "conj",
+    "glosses": [
+      "while",
+      "during"
+    ]
+  },
+  "wer": {
+    "pos": "pron",
+    "glosses": [
+      "who"
+    ]
+  },
+  "wen": {
+    "pos": "pron",
+    "glosses": [
+      "whom (accusative)"
+    ]
+  },
+  "wem": {
+    "pos": "pron",
+    "glosses": [
+      "whom (dative)"
+    ]
+  },
+  "wessen": {
+    "pos": "pron",
+    "glosses": [
+      "whose"
+    ]
+  },
+  "was": {
+    "pos": "pron",
+    "glosses": [
+      "what"
+    ]
+  },
+  "wo": {
+    "pos": "adv",
+    "glosses": [
+      "where"
+    ]
+  },
+  "wohin": {
+    "pos": "adv",
+    "glosses": [
+      "where to"
+    ]
+  },
+  "woher": {
+    "pos": "adv",
+    "glosses": [
+      "where from"
+    ]
+  },
+  "wann": {
+    "pos": "adv",
+    "glosses": [
+      "when"
+    ]
+  },
+  "warum": {
+    "pos": "adv",
+    "glosses": [
+      "why"
+    ]
+  },
+  "wieso": {
+    "pos": "adv",
+    "glosses": [
+      "why",
+      "how come"
+    ]
+  },
+  "weshalb": {
+    "pos": "adv",
+    "glosses": [
+      "why",
+      "for what reason"
+    ]
+  },
+  "wie": {
+    "pos": "adv",
+    "glosses": [
+      "how",
+      "like",
+      "as"
+    ]
+  },
+  "wieviel": {
+    "pos": "pron",
+    "glosses": [
+      "how much"
+    ]
+  },
+  "wie_viel": {
+    "pos": "pron",
+    "glosses": [
+      "how much"
+    ]
+  },
+  "wieviele": {
+    "pos": "pron",
+    "glosses": [
+      "how many"
+    ]
+  },
+  "welcher": {
+    "pos": "pron",
+    "glosses": [
+      "which"
+    ]
+  },
+  "welche": {
+    "pos": "pron",
+    "glosses": [
+      "which"
+    ]
+  },
+  "welches": {
+    "pos": "pron",
+    "glosses": [
+      "which"
+    ]
+  },
+  "welchen": {
+    "pos": "pron",
+    "glosses": [
+      "which"
+    ]
+  },
+  "welchem": {
+    "pos": "pron",
+    "glosses": [
+      "which"
+    ]
+  },
+  "null": {
+    "pos": "num",
+    "glosses": [
+      "zero"
+    ]
+  },
+  "eins": {
+    "pos": "num",
+    "glosses": [
+      "one"
+    ]
+  },
+  "zwei": {
+    "pos": "num",
+    "glosses": [
+      "two"
+    ]
+  },
+  "drei": {
+    "pos": "num",
+    "glosses": [
+      "three"
+    ]
+  },
+  "vier": {
+    "pos": "num",
+    "glosses": [
+      "four"
+    ]
+  },
+  "fünf": {
+    "pos": "num",
+    "glosses": [
+      "five"
+    ]
+  },
+  "sechs": {
+    "pos": "num",
+    "glosses": [
+      "six"
+    ]
+  },
+  "sieben": {
+    "pos": "num",
+    "glosses": [
+      "seven"
+    ]
+  },
+  "acht": {
+    "pos": "num",
+    "glosses": [
+      "eight"
+    ]
+  },
+  "neun": {
+    "pos": "num",
+    "glosses": [
+      "nine"
+    ]
+  },
+  "zehn": {
+    "pos": "num",
+    "glosses": [
+      "ten"
+    ]
+  },
+  "elf": {
+    "pos": "num",
+    "glosses": [
+      "eleven"
+    ]
+  },
+  "zwölf": {
+    "pos": "num",
+    "glosses": [
+      "twelve"
+    ]
+  },
+  "dreizehn": {
+    "pos": "num",
+    "glosses": [
+      "thirteen"
+    ]
+  },
+  "vierzehn": {
+    "pos": "num",
+    "glosses": [
+      "fourteen"
+    ]
+  },
+  "fünfzehn": {
+    "pos": "num",
+    "glosses": [
+      "fifteen"
+    ]
+  },
+  "sechzehn": {
+    "pos": "num",
+    "glosses": [
+      "sixteen"
+    ]
+  },
+  "siebzehn": {
+    "pos": "num",
+    "glosses": [
+      "seventeen"
+    ]
+  },
+  "achtzehn": {
+    "pos": "num",
+    "glosses": [
+      "eighteen"
+    ]
+  },
+  "neunzehn": {
+    "pos": "num",
+    "glosses": [
+      "nineteen"
+    ]
+  },
+  "zwanzig": {
+    "pos": "num",
+    "glosses": [
+      "twenty"
+    ]
+  },
+  "dreißig": {
+    "pos": "num",
+    "glosses": [
+      "thirty"
+    ]
+  },
+  "vierzig": {
+    "pos": "num",
+    "glosses": [
+      "forty"
+    ]
+  },
+  "fünfzig": {
+    "pos": "num",
+    "glosses": [
+      "fifty"
+    ]
+  },
+  "hundert": {
+    "pos": "num",
+    "glosses": [
+      "hundred"
+    ]
+  },
+  "tausend": {
+    "pos": "num",
+    "glosses": [
+      "thousand"
+    ]
+  },
+  "erste": {
+    "pos": "num",
+    "glosses": [
+      "first"
+    ]
+  },
+  "zweite": {
+    "pos": "num",
+    "glosses": [
+      "second"
+    ]
+  },
+  "dritte": {
+    "pos": "num",
+    "glosses": [
+      "third"
+    ]
+  }
+}
