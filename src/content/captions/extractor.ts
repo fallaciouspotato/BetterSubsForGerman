@@ -17,30 +17,39 @@ export function appendTlang(baseUrl: string, lang: string): string {
   return `${baseUrl}${sep}tlang=${lang}`;
 }
 
+function getTrackLanguage(tr: CaptionTrack): string {
+  if (tr.languageCode) return tr.languageCode.toLowerCase();
+  if (tr.vssId) {
+    const clean = tr.vssId.replace(/^[a.]*/, '').split('.')[0];
+    if (clean) return clean.toLowerCase();
+  }
+  return '';
+}
+
 function findBestTrack(tracks: CaptionTrack[], targetLang: string): CaptionTrack | null {
   const t = targetLang.toLowerCase();
 
   // 1. Exact match manual
   const exactManual = tracks.find(
-    (tr) => tr.languageCode?.toLowerCase() === t && (!tr.vssId || !tr.vssId.startsWith('a.')) && tr.kind !== 'asr'
+    (tr) => getTrackLanguage(tr) === t && (!tr.vssId || !tr.vssId.startsWith('a.')) && tr.kind !== 'asr'
   );
   if (exactManual) return exactManual;
 
   // 2. Regional match manual (e.g. de-DE, de-AT)
   const regionalManual = tracks.find(
-    (tr) => tr.languageCode?.toLowerCase().startsWith(`${t}-`) && (!tr.vssId || !tr.vssId.startsWith('a.')) && tr.kind !== 'asr'
+    (tr) => getTrackLanguage(tr).startsWith(`${t}-`) && (!tr.vssId || !tr.vssId.startsWith('a.')) && tr.kind !== 'asr'
   );
   if (regionalManual) return regionalManual;
 
   // 3. Exact match ASR
   const exactAsr = tracks.find(
-    (tr) => tr.languageCode?.toLowerCase() === t && ((tr.vssId && tr.vssId.startsWith('a.')) || tr.kind === 'asr')
+    (tr) => getTrackLanguage(tr) === t && ((tr.vssId && tr.vssId.startsWith('a.')) || tr.kind === 'asr')
   );
   if (exactAsr) return exactAsr;
 
   // 4. Regional match ASR (e.g. a.de-DE)
   const regionalAsr = tracks.find(
-    (tr) => tr.languageCode?.toLowerCase().startsWith(`${t}-`) && ((tr.vssId && tr.vssId.startsWith('a.')) || tr.kind === 'asr')
+    (tr) => getTrackLanguage(tr).startsWith(`${t}-`) && ((tr.vssId && tr.vssId.startsWith('a.')) || tr.kind === 'asr')
   );
   if (regionalAsr) return regionalAsr;
 

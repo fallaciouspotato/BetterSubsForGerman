@@ -18,6 +18,7 @@ export class SubtitleSyncController {
   private savedLemmas: Set<string> = new Set();
   private savedWordsMap: Map<string, Word> = new Map();
   private isCardPinned: boolean = false;
+  private learningMode: 'immersion' | 'reverse' = 'immersion';
 
   constructor(wrapper: HTMLElement, handlers?: SubtitleSyncCallbacks) {
     this.wrapper = wrapper;
@@ -40,6 +41,15 @@ export class SubtitleSyncController {
 
   public setWrapper(wrapper: HTMLElement): void {
     this.wrapper = wrapper;
+  }
+
+  public setLearningMode(mode: 'immersion' | 'reverse'): void {
+    this.learningMode = mode;
+    this.renderCurrentCue();
+  }
+
+  public getLearningMode(): 'immersion' | 'reverse' {
+    return this.learningMode;
   }
 
   public getCuesCount(): number {
@@ -136,12 +146,12 @@ export class SubtitleSyncController {
   public renderCurrentCue(): void {
     const cue = this.getCurrentCue();
     if (!cue) {
-      renderCue(this.wrapper, null, this.savedLemmas, this.handlers);
+      renderCue(this.wrapper, null, this.savedLemmas, this.handlers, null, this.learningMode);
       return;
     }
 
     const masked = applyStageMasking(cue, this.savedWordsMap);
-    renderCue(this.wrapper, cue, this.savedLemmas, this.handlers, masked);
+    renderCue(this.wrapper, cue, this.savedLemmas, this.handlers, masked, this.learningMode);
   }
 
   public attachVideo(video: HTMLVideoElement): void {
@@ -261,10 +271,10 @@ export class SubtitleSyncController {
     if (index !== this.currentCueIndex) {
       this.currentCueIndex = index;
       if (!cue) {
-        renderCue(this.wrapper, null, this.savedLemmas, this.handlers);
+        renderCue(this.wrapper, null, this.savedLemmas, this.handlers, null, this.learningMode);
       } else {
         const masked = applyStageMasking(cue, this.savedWordsMap);
-        renderCue(this.wrapper, cue, this.savedLemmas, this.handlers, masked);
+        renderCue(this.wrapper, cue, this.savedLemmas, this.handlers, masked, this.learningMode);
       }
 
       // Dismiss hover cards on cue change if not pinned

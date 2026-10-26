@@ -33,6 +33,17 @@ export function parseTimedTextJson3(data: RawTimedTextJson3): TimedSegment[] {
     }
   }
 
+  // Auto-fill zero or negative durations to span to the next segment's start time
+  if (segments.length > 0) {
+    for (let i = 0; i < segments.length; i++) {
+      if (segments[i].durationMs <= 0) {
+        const nextStart = i + 1 < segments.length ? segments[i + 1].startMs : segments[i].startMs + 3000;
+        segments[i].endMs = Math.max(segments[i].startMs + 500, nextStart);
+        segments[i].durationMs = segments[i].endMs - segments[i].startMs;
+      }
+    }
+  }
+
   return segments;
 }
 
@@ -171,16 +182,104 @@ export function tokenizeWords(text: string): string[] {
 }
 
 /**
+ * Checks if a text segment ends with sentence-terminating punctuation.
+ */
+export function isSentenceEnd(text: string): boolean {
+  const trimmed = text.trim();
+  if (!trimmed) return false;
+  // Ignore common abbreviations ending in a period
+  if (/(?:etc\.|bzw\.|z\.B\.|ca\.|vgl\.|u\.a\.|d\.h\.|Mr\.|Mrs\.|Ms\.|Dr\.|Prof\.)$/i.test(trimmed)) {
+    return false;
+  }
+  return /[.!?…]$/.test(trimmed);
+}
+
+/**
+ * Merges two text strings, deduplicating any rolling suffix-prefix overlap.
+ */
+export function mergeTextWithOverlap(a: string, b: string): string {
+  const cleanA = a.trim();
+  const cleanB = b.trim();
+  if (!cleanA) return cleanB;
+  if (!cleanB) return cleanA;
+  if (cleanA === cleanB) return cleanA;
+
+  if (cleanA.endsWith(cleanB)) return cleanA;
+  if (cleanB.startsWith(cleanA)) return cleanB;
+
+  const wordsA = cleanA.split(/\s+/);
+  const wordsB = cleanB.split(/\s+/);
+
+  const maxCheck = Math.min(wordsA.length, wordsB.length, 6);
+  for (let len = maxCheck; len >= 1; len--) {
+    const tailA = wordsA.slice(-len).join(' ').toLowerCase().replace(/[.,!?;:…]/g, '');
+    const headB = wordsB.slice(0, len).join(' ').toLowerCase().replace(/[.,!?;:…]/g, '');
+    if (tailA === headB) {
+      return cleanA + ' ' + wordsB.slice(len).join(' ');
+    }
+  }
+
+  return cleanA + ' ' + cleanB;
+}
+
+/**
+ * Pre-merges contiguous phrase fragments into complete sentences within a single track.
+ * Groups fragments that do not end with sentence-ending punctuation when the pause is short.
+ */
+export function mergeSentenceSegments(
+  segments: TimedSegment[],
+  maxDurationMs: number = 7500,
+  maxGapMs: number = 1000,
+  maxLength: number = 140
+): TimedSegment[] {
+  if (!segments || segments.length === 0) return [];
+
+  const merged: TimedSegment[] = [];
+  let current: TimedSegment = { ...segments[0] };
+
+  for (let i = 1; i < segments.length; i++) {
+    const next = segments[i];
+    const gap = next.startMs - current.endMs;
+    const combinedDuration = next.endMs - current.startMs;
+    const combinedLength = current.text.length + 1 + next.text.length;
+
+    // Conditions to merge:
+    // 1. Current segment is not a complete sentence (does not end with . ! ? …)
+    // 2. Pause between segments is small (<= maxGapMs)
+    // 3. Combined duration and length stay within comfortable reading limits
+    const shouldMerge =
+      !isSentenceEnd(current.text) &&
+      gap <= maxGapMs &&
+      combinedDuration <= maxDurationMs &&
+      combinedLength <= maxLength;
+
+    if (shouldMerge) {
+      current.text = mergeTextWithOverlap(current.text, next.text);
+      current.endMs = Math.max(current.endMs, next.endMs);
+      current.durationMs = current.endMs - current.startMs;
+    } else {
+      merged.push(current);
+      current = { ...next };
+    }
+  }
+
+  merged.push(current);
+  return merged;
+}
+
+/**
  * Aligns target language segments and native language segments into synchronized CuePairs.
- * Segments that overlap in time are paired together.
+ * Guarantees that both target (German) and native (English) subtitles display the COMPLETE sentence,
+ * merging fragments across both tracks and synchronizing co-temporal sentence boundaries.
  */
 export function alignSegments(
   targetSegments: TimedSegment[],
   nativeSegments: TimedSegment[]
 ): CuePair[] {
-  // If we only have native segments (e.g. English video, target German will be translated dynamically)
+  // 1. Edge Case: Only native segments (e.g. English video, target German translated dynamically)
   if (targetSegments.length === 0 && nativeSegments.length > 0) {
-    return nativeSegments.map((nSeg) => ({
+    const cleanNative = mergeSentenceSegments(nativeSegments);
+    return cleanNative.map((nSeg) => ({
       startMs: nSeg.startMs,
       endMs: nSeg.endMs,
       target: '',
@@ -189,27 +288,164 @@ export function alignSegments(
     }));
   }
 
+  // 2. Edge Case: Only target segments (e.g. German video with no English track)
+  if (targetSegments.length > 0 && nativeSegments.length === 0) {
+    const cleanTarget = mergeSentenceSegments(targetSegments);
+    return cleanTarget.map((tSeg) => ({
+      startMs: tSeg.startMs,
+      endMs: tSeg.endMs,
+      target: tSeg.text,
+      native: '',
+      targetWords: tokenizeWords(tSeg.text),
+    }));
+  }
+
   if (targetSegments.length === 0) {
     return [];
   }
 
+  // 3. Both target and native segments are present
+  // Pre-merge contiguous phrase fragments into complete sentences
+  const cleanTarget = mergeSentenceSegments(targetSegments);
+  const cleanNative = mergeSentenceSegments(nativeSegments);
+
   const cues: CuePair[] = [];
+  let tIdx = 0;
+  let nIdx = 0;
 
-  for (const tSeg of targetSegments) {
-    // Find matching native segments that overlap with this target segment
-    const matchingNative = nativeSegments.filter(
-      (nSeg) => Math.max(tSeg.startMs, nSeg.startMs) < Math.min(tSeg.endMs, nSeg.endMs)
-    );
+  while (tIdx < cleanTarget.length || nIdx < cleanNative.length) {
+    // If only targets left
+    if (nIdx >= cleanNative.length) {
+      const t = cleanTarget[tIdx++];
+      cues.push({
+        startMs: t.startMs,
+        endMs: t.endMs,
+        target: t.text,
+        native: '',
+        targetWords: tokenizeWords(t.text),
+      });
+      continue;
+    }
 
-    const nativeText = matchingNative.map((n) => n.text).join(' ');
+    // If only natives left
+    if (tIdx >= cleanTarget.length) {
+      const n = cleanNative[nIdx++];
+      cues.push({
+        startMs: n.startMs,
+        endMs: n.endMs,
+        target: '',
+        native: n.text,
+        targetWords: [],
+      });
+      continue;
+    }
+
+    // Both tracks have remaining segments
+    const curT = cleanTarget[tIdx];
+    const curN = cleanNative[nIdx];
+
+    // If curT finishes completely before curN starts with no overlap
+    if (curT.endMs <= curN.startMs) {
+      cues.push({
+        startMs: curT.startMs,
+        endMs: curT.endMs,
+        target: curT.text,
+        native: '',
+        targetWords: tokenizeWords(curT.text),
+      });
+      tIdx++;
+      continue;
+    }
+
+    // If curN finishes completely before curT starts with no overlap
+    if (curN.endMs <= curT.startMs) {
+      cues.push({
+        startMs: curN.startMs,
+        endMs: curN.endMs,
+        target: '',
+        native: curN.text,
+        targetWords: [],
+      });
+      nIdx++;
+      continue;
+    }
+
+    // They overlap! Form a synchronized sentence cluster
+    const clusterTargets: TimedSegment[] = [curT];
+    const clusterNatives: TimedSegment[] = [curN];
+    tIdx++;
+    nIdx++;
+
+    let clusterStart = Math.min(curT.startMs, curN.startMs);
+    let clusterEnd = Math.max(curT.endMs, curN.endMs);
+    const maxClusterDuration = 8000; // 8 seconds maximum cluster duration
+
+    // Greedily expand cluster with any subsequent segments that overlap with the current cluster
+    let expanded = true;
+    while (expanded) {
+      expanded = false;
+
+      // Check if next target overlaps with the current cluster
+      if (tIdx < cleanTarget.length) {
+        const nextT = cleanTarget[tIdx];
+        const overlaps = Math.max(nextT.startMs, clusterStart) < Math.min(nextT.endMs, clusterEnd);
+        const wouldExceedDuration = Math.max(clusterEnd, nextT.endMs) - clusterStart > maxClusterDuration;
+
+        const prevTargetEnded = isSentenceEnd(clusterTargets[clusterTargets.length - 1].text);
+        const prevNativeEnded = isSentenceEnd(clusterNatives[clusterNatives.length - 1].text);
+        const bothEnded = prevTargetEnded && prevNativeEnded;
+
+        if (overlaps && !wouldExceedDuration && !bothEnded) {
+          clusterTargets.push(nextT);
+          clusterStart = Math.min(clusterStart, nextT.startMs);
+          clusterEnd = Math.max(clusterEnd, nextT.endMs);
+          tIdx++;
+          expanded = true;
+        }
+      }
+
+      // Check if next native overlaps with the current cluster
+      if (nIdx < cleanNative.length) {
+        const nextN = cleanNative[nIdx];
+        const overlaps = Math.max(nextN.startMs, clusterStart) < Math.min(nextN.endMs, clusterEnd);
+        const wouldExceedDuration = Math.max(clusterEnd, nextN.endMs) - clusterStart > maxClusterDuration;
+
+        const prevTargetEnded = isSentenceEnd(clusterTargets[clusterTargets.length - 1].text);
+        const prevNativeEnded = isSentenceEnd(clusterNatives[clusterNatives.length - 1].text);
+        const bothEnded = prevTargetEnded && prevNativeEnded;
+
+        if (overlaps && !wouldExceedDuration && !bothEnded) {
+          clusterNatives.push(nextN);
+          clusterStart = Math.min(clusterStart, nextN.startMs);
+          clusterEnd = Math.max(clusterEnd, nextN.endMs);
+          nIdx++;
+          expanded = true;
+        }
+      }
+    }
+
+    const targetText = clusterTargets.map((t) => t.text).reduce(mergeTextWithOverlap, '');
+    const nativeText = clusterNatives.map((n) => n.text).reduce(mergeTextWithOverlap, '');
 
     cues.push({
-      startMs: tSeg.startMs,
-      endMs: tSeg.endMs,
-      target: tSeg.text,
+      startMs: clusterStart,
+      endMs: clusterEnd,
+      target: targetText,
       native: nativeText,
-      targetWords: tokenizeWords(tSeg.text),
+      targetWords: tokenizeWords(targetText),
     });
+  }
+
+  cues.sort((a, b) => a.startMs - b.startMs);
+
+  // Clamp boundaries between consecutive cues to avoid overlap jitter
+  for (let i = 0; i < cues.length - 1; i++) {
+    if (cues[i].endMs > cues[i + 1].startMs) {
+      cues[i].endMs = cues[i + 1].startMs;
+    }
+    if (cues[i].endMs <= cues[i].startMs) {
+      cues[i].endMs = cues[i].startMs + 500;
+    }
   }
 
   return cues;
@@ -386,7 +622,31 @@ export function parseCaptionPayload(rawText: string): TimedSegment[] {
 export async function fetchTimedText(baseUrl: string): Promise<TimedSegment[]> {
   if (!baseUrl) return [];
 
-  // 1. Fetch raw baseUrl FIRST
+  // 1. If baseUrl is an auto-translated candidate (tlang=), YouTube requires fmt=json3.
+  // Query fmt=json3 FIRST!
+  if (baseUrl.includes('tlang=')) {
+    const jsonUrl = appendFmt(baseUrl, 'json3');
+    const jsonResult = await fetchRawText(jsonUrl);
+    if (jsonResult.text) {
+      const segments = parseCaptionPayload(jsonResult.text);
+      if (segments.length > 0) {
+        return segments;
+      }
+    }
+
+    const srv3Url = appendFmt(baseUrl, 'srv3');
+    const srv3Result = await fetchRawText(srv3Url);
+    if (srv3Result.text) {
+      const segments = parseCaptionPayload(srv3Result.text);
+      if (segments.length > 0) {
+        return segments;
+      }
+    }
+
+    throw new Error('Auto-translated track not available from YouTube caption server');
+  }
+
+  // 2. For native tracks: fetch raw baseUrl FIRST (preserves signed HMAC query params without breaking signatures)
   const rawResult = await fetchRawText(baseUrl);
   if (rawResult.text) {
     const segments = parseCaptionPayload(rawResult.text);
@@ -395,7 +655,12 @@ export async function fetchTimedText(baseUrl: string): Promise<TimedSegment[]> {
     }
   }
 
-  // 2. Try with fmt=json3
+  // Fast-fail: 403 Forbidden or 404 Not Found will not succeed with alternative format parameters
+  if (rawResult.status === 403 || rawResult.status === 404) {
+    throw new Error(`Track unavailable (HTTP ${rawResult.status})`);
+  }
+
+  // 3. Try with fmt=json3
   const jsonUrl = appendFmt(baseUrl, 'json3');
   const jsonResult = await fetchRawText(jsonUrl);
   if (jsonResult.text) {
@@ -405,7 +670,7 @@ export async function fetchTimedText(baseUrl: string): Promise<TimedSegment[]> {
     }
   }
 
-  // 3. Try with fmt=srv3 (modern YouTube Format 3 XML)
+  // 4. Try with fmt=srv3 (modern YouTube Format 3 XML)
   const srv3Url = appendFmt(baseUrl, 'srv3');
   const srv3Result = await fetchRawText(srv3Url);
   if (srv3Result.text) {

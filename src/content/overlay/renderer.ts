@@ -232,7 +232,8 @@ export function renderCue(
   cue: CuePair | null,
   savedLemmas: Set<string> = new Set(),
   handlers?: WordInteractionHandlers,
-  maskedCue?: MaskedCuePair | null
+  maskedCue?: MaskedCuePair | null,
+  learningMode: 'immersion' | 'reverse' = 'immersion'
 ): void {
   let textSlot = wrapper.querySelector('.dual-sub-text-slot') as HTMLElement;
   if (!textSlot) {
@@ -249,6 +250,20 @@ export function renderCue(
 
   wrapper.classList.remove('dual-sub-hidden');
   textSlot.innerHTML = '';
+
+  // Mode badge
+  let badge = wrapper.querySelector('.dual-sub-mode-badge') as HTMLElement;
+  if (learningMode === 'reverse') {
+    if (!badge) {
+      badge = document.createElement('div');
+      badge.className = 'dual-sub-mode-badge';
+      wrapper.appendChild(badge);
+    }
+    badge.textContent = 'Reverse: EN ➔ DE';
+    badge.title = 'Reverse Learning Mode: Translating English speech into German target subtitles';
+  } else if (badge) {
+    badge.remove();
+  }
 
   // 1. Target track container (German)
   if (maskedCue && maskedCue.targetTokens && maskedCue.targetTokens.length > 0) {
@@ -268,6 +283,15 @@ export function renderCue(
         if (!token) continue;
         targetEl.appendChild(createTargetTokenElement({ text: token, visible: true }, savedLemmas, handlers));
       }
+      textSlot.appendChild(targetEl);
+    } else if (learningMode === 'reverse' && cue.native) {
+      // Smooth loading placeholder while English line is translating to German
+      const targetEl = document.createElement('div');
+      targetEl.className = 'dual-sub-target dual-sub-translating';
+      const textSpan = document.createElement('span');
+      textSpan.className = 'dual-sub-translating-text';
+      textSpan.textContent = '... Translating to German ...';
+      targetEl.appendChild(textSpan);
       textSlot.appendChild(targetEl);
     }
   }

@@ -234,6 +234,43 @@ export function App() {
             </div>
           </div>
 
+          {/* Reverse Learning Feature Banner */}
+          <div
+            style={{
+              background: '#24273a',
+              padding: '12px 14px',
+              borderRadius: '8px',
+              border: '1px solid #cba6f7',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '6px',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ fontSize: '15px' }}>🔄</span>
+                <span style={{ fontSize: '13px', fontWeight: 700, color: '#cba6f7' }}>
+                  Reverse Learning Active
+                </span>
+              </div>
+              <span
+                style={{
+                  background: '#cba6f7',
+                  color: '#11111b',
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                }}
+              >
+                EN ➔ DE
+              </span>
+            </div>
+            <div style={{ fontSize: '12px', color: '#cad3f5', lineHeight: 1.4 }}>
+              Watching an English video? English speech is automatically translated into German subtitles in real time. Hover over German words to view definitions or save them to your deck!
+            </div>
+          </div>
+
           {/* 2-Day Rule Explanation */}
           <div style={{ background: '#1e2030', padding: '10px 12px', borderRadius: '6px', fontSize: '12px', color: '#a5adcb', borderLeft: '3px solid #8aadf4' }}>
             <strong style={{ color: '#cad3f5' }}>2-Day Promotion Rule:</strong> A word advances to the next stage only after correct answers on at least <strong>two separate days</strong>. An &quot;Again&quot; response demotes by 1 stage.

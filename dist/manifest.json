@@ -11,7 +11,8 @@
     "https://www.youtube.com/*",
     "https://*.googlevideo.com/*",
     "https://api.mymemory.translated.net/*",
-    "https://translate.googleapis.com/*"
+    "https://translate.googleapis.com/*",
+    "https://*.google.com/*"
   ],
   "background": {
     "service_worker": "service-worker-loader.js",

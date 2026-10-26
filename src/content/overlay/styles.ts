@@ -257,6 +257,44 @@ export const OVERLAY_STYLES = `
   color: #f38ba8;
 }
 
+.dual-sub-mode-badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: #cba6f7;
+  color: #11111b;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+
+.dual-sub-translating {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dual-sub-translating-text {
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  color: #cba6f7;
+  opacity: 0.8;
+  animation: dualSubPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes dualSubPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
 .dual-sub-hidden {
   display: none !important;
 }

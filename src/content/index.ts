@@ -27,6 +27,7 @@ export class DualSubManager {
   // Tracks how far ahead subtitles have been batch-buffered
   private bufferedUntilIndex: number = -1;
   private isProcessingTracks: boolean = false;
+  private learningMode: 'immersion' | 'reverse' = 'immersion';
 
   constructor() {
     dictionaryLoader.load().catch((err) => {
@@ -44,6 +45,7 @@ export class DualSubManager {
       return;
     }
     this.isProcessingTracks = false;
+    this.learningMode = 'immersion';
     this.currentVideoId = newVideoId;
     this.sessionSavedLemmas.clear();
     this.sentenceTranslationPending.clear();
@@ -58,6 +60,7 @@ export class DualSubManager {
 
   public resetVideo(): void {
     this.isProcessingTracks = false;
+    this.learningMode = 'immersion';
     this.currentVideoId = null;
     this.sessionSavedLemmas.clear();
     this.sentenceTranslationPending.clear();
@@ -122,30 +125,30 @@ export class DualSubManager {
       let targetSegments: import('./captions/types').TimedSegment[] = [];
       let nativeSegments: import('./captions/types').TimedSegment[] = [];
 
-      // 1. Attempt to fetch target track (German)
-      if (targetTrack && targetTrack.baseUrl) {
-        try {
-          console.log('[dual-sub:bridge] Fetching target track:', targetTrack.name?.simpleText || targetTrack.languageCode, targetTrack.vssId);
-          targetSegments = await fetchTimedText(targetTrack.baseUrl);
-        } catch (err) {
-          if (targetTrack.vssId?.startsWith('t.')) {
-            console.log('[dual-sub:bridge] Auto-translated target track not available via URL; falling back to dynamic translation.');
-          } else {
-            console.warn('[dual-sub:bridge] Target track fetch failed; will attempt fallback:', (err as Error).message);
-          }
+      // Fetch target track (German) and native track (English) concurrently for minimal latency
+      const [targetResult, nativeResult] = await Promise.allSettled([
+        targetTrack && targetTrack.baseUrl
+          ? fetchTimedText(targetTrack.baseUrl)
+          : Promise.resolve([]),
+        nativeTrack && nativeTrack.baseUrl
+          ? fetchTimedText(nativeTrack.baseUrl)
+          : Promise.resolve([]),
+      ]);
+
+      if (targetResult.status === 'fulfilled') {
+        targetSegments = targetResult.value;
+      } else {
+        if (targetTrack?.vssId?.startsWith('t.')) {
+          console.log('[dual-sub:bridge] Auto-translated target track not available via URL; using dynamic lookahead translation.');
+        } else {
+          console.warn('[dual-sub:bridge] Target track fetch failed; will attempt fallback:', targetResult.reason?.message);
         }
       }
 
-      // 2. Attempt to fetch native track (English).
-      // Always try — even auto-translated tracks (t.en) built by extractor.ts are served by
-      // YouTube's own caption server in a single request via the MAIN world bridge.
-      if (nativeTrack && nativeTrack.baseUrl) {
-        try {
-          console.log('[dual-sub:bridge] Fetching native track:', nativeTrack.name?.simpleText || nativeTrack.languageCode, nativeTrack.vssId);
-          nativeSegments = await fetchTimedText(nativeTrack.baseUrl);
-        } catch (err) {
-          console.log('[dual-sub:bridge] Native track fetch failed; English will be filled via lookahead translation:', (err as Error).message);
-        }
+      if (nativeResult.status === 'fulfilled') {
+        nativeSegments = nativeResult.value;
+      } else {
+        console.log('[dual-sub:bridge] Native track fetch failed:', nativeResult.reason?.message);
       }
 
       // 3. Fallback: if both failed or target was empty, try raw tracks from YouTube directly
@@ -172,6 +175,30 @@ export class DualSubManager {
         console.warn('[dual-sub:bridge] Could not retrieve captions from any available tracks.');
         return;
       }
+
+      // Detect Learning Mode:
+      // - "reverse": English (or non-German) video dialogue with German target subtitles (either auto-translated from YouTube or dynamically translated)
+      // - "immersion": German video dialogue with English reference
+      const hasNativeGermanTrack = tracks.some(
+        (t) =>
+          (t.languageCode?.toLowerCase() === 'de' || t.languageCode?.toLowerCase().startsWith('de-')) &&
+          (!t.vssId || !t.vssId.startsWith('t.')) &&
+          !t.baseUrl.includes('tlang=')
+      );
+      const isReverseMode =
+        !hasNativeGermanTrack ||
+        targetTrack?.vssId?.startsWith('t.') ||
+        targetTrack?.baseUrl?.includes('tlang=') ||
+        (targetSegments.length === 0 && nativeSegments.length > 0);
+
+      this.learningMode = isReverseMode ? 'reverse' : 'immersion';
+      console.log(
+        `[dual-sub:bridge] Mode set to: ${this.learningMode.toUpperCase()} (${
+          isReverseMode
+            ? 'Reverse Learning: English speech -> German target subtitles'
+            : 'Immersion: German speech -> English reference'
+        })`
+      );
 
       const cues = alignSegments(targetSegments, nativeSegments);
       console.log(`[dual-sub:bridge] Synchronized ${cues.length} dual-subtitle cues.`);
@@ -379,6 +406,7 @@ export class DualSubManager {
       this.syncController.setWrapper(this.container.wrapper);
     }
 
+    this.syncController.setLearningMode(this.learningMode);
     this.syncController.setCues(cues);
 
     // Retrieve saved words via background service worker

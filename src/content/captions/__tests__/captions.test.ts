@@ -1,6 +1,17 @@
 import { describe, it, expect } from 'vitest';
 import { selectTracks } from '../extractor';
-import { parseTimedTextJson3, parseTimedTextXml, parseCaptionPayload, alignSegments, tokenizeWords } from '../fetcher';
+import {
+  parseTimedTextJson3,
+  parseTimedTextXml,
+  parseCaptionPayload,
+  alignSegments,
+  tokenizeWords,
+  fetchTimedText,
+  appendFmt,
+  isSentenceEnd,
+  mergeTextWithOverlap,
+  mergeSentenceSegments,
+} from '../fetcher';
 import type { CaptionTrack, RawTimedTextJson3, TimedSegment } from '../types';
 
 describe('captions/extractor', () => {
@@ -69,6 +80,21 @@ describe('captions/extractor', () => {
     const onlyEnglish: CaptionTrack[] = [sampleTracks[2]];
     const selected = selectTracks(onlyEnglish, 'de', 'en');
     expect(selected.nativeTrack?.languageCode).toBe('en');
+    expect(selected.targetTrack?.baseUrl).toContain('tlang=de');
+  });
+
+  it('resolves track language from vssId if languageCode is missing', () => {
+    const tracksWithoutLangCode: CaptionTrack[] = [
+      {
+        baseUrl: 'https://www.youtube.com/api/timedtext?v=1&lang=en',
+        vssId: 'a.en',
+        kind: 'asr',
+        languageCode: '',
+        name: { simpleText: 'English' },
+      },
+    ];
+    const selected = selectTracks(tracksWithoutLangCode, 'de', 'en');
+    expect(selected.nativeTrack?.vssId).toBe('a.en');
     expect(selected.targetTrack?.baseUrl).toContain('tlang=de');
   });
 
@@ -202,5 +228,135 @@ describe('captions/fetcher', () => {
     expect(cues).toHaveLength(1);
     expect(cues[0].native).toBe('Welcome to the channel.');
     expect(cues[0].target).toBe('');
+  });
+
+  it('correctly detects sentence endings vs abbreviations', () => {
+    expect(isSentenceEnd('Das ist ein Satz.')).toBe(true);
+    expect(isSentenceEnd('Wie geht es dir?')).toBe(true);
+    expect(isSentenceEnd('Achtung!')).toBe(true);
+    expect(isSentenceEnd('Wie auch immer,')).toBe(false);
+    expect(isSentenceEnd('Das ist z.B.')).toBe(false);
+    expect(isSentenceEnd('Hello Dr.')).toBe(false);
+    expect(isSentenceEnd('plain word without punctuation')).toBe(false);
+  });
+
+  it('merges overlapping suffix-prefix text without duplicating words', () => {
+    expect(mergeTextWithOverlap('Anyway, I am bored,', 'and this must change.')).toBe(
+      'Anyway, I am bored, and this must change.'
+    );
+    // Overlapping words
+    expect(mergeTextWithOverlap("Anyway, I'm bored,", "I'm bored, and this situation")).toBe(
+      "Anyway, I'm bored, and this situation"
+    );
+  });
+
+  it('pre-merges fragmented phrase segments into complete sentences', () => {
+    const rawSegments: TimedSegment[] = [
+      { startMs: 1000, durationMs: 2000, endMs: 3000, text: 'Wie auch immer, ich langweile mich,' },
+      { startMs: 3000, durationMs: 3000, endMs: 6000, text: 'und diese Situation muss sofort geändert werden.' },
+      { startMs: 8000, durationMs: 2000, endMs: 10000, text: 'Wir müssen los.' },
+    ];
+
+    const merged = mergeSentenceSegments(rawSegments);
+    expect(merged).toHaveLength(2);
+    expect(merged[0].text).toBe('Wie auch immer, ich langweile mich, und diese Situation muss sofort geändert werden.');
+    expect(merged[0].startMs).toBe(1000);
+    expect(merged[0].endMs).toBe(6000);
+    expect(merged[1].text).toBe('Wir müssen los.');
+  });
+
+  it('guarantees the German subtitle shows the whole sentence matching the English subtitle', () => {
+    // English subtitle is a whole sentence spanning 1000ms to 6000ms
+    const native: TimedSegment[] = [
+      {
+        startMs: 1000,
+        durationMs: 5000,
+        endMs: 6000,
+        text: "Anyway, I'm bored, and this situation must be changed immediately.",
+      },
+    ];
+
+    // German subtitle is fragmented into 2 parts
+    const target: TimedSegment[] = [
+      { startMs: 1000, durationMs: 2500, endMs: 3500, text: 'Wie auch immer, ich langweile mich,' },
+      { startMs: 3500, durationMs: 2500, endMs: 6000, text: 'und diese Situation muss sofort geändert werden.' },
+    ];
+
+    const cues = alignSegments(target, native);
+    expect(cues).toHaveLength(1);
+    // Crucial: German subtitle shows the WHOLE sentence, not just a fragment!
+    expect(cues[0].target).toBe('Wie auch immer, ich langweile mich, und diese Situation muss sofort geändert werden.');
+    expect(cues[0].native).toBe("Anyway, I'm bored, and this situation must be changed immediately.");
+    expect(cues[0].startMs).toBe(1000);
+    expect(cues[0].endMs).toBe(6000);
+    expect(cues[0].targetWords).toContain('Situation');
+    expect(cues[0].targetWords).toContain('geändert');
+  });
+
+  it('guarantees both subtitles show the whole sentence in reverse learning mode', () => {
+    // English video with fragmented speech
+    const native: TimedSegment[] = [
+      { startMs: 1000, durationMs: 2000, endMs: 3000, text: 'The first thing they will ask us' },
+      { startMs: 3000, durationMs: 3000, endMs: 6000, text: 'at the border is our passport.' },
+    ];
+
+    // German auto-translated track has 2 segments
+    const target: TimedSegment[] = [
+      { startMs: 1000, durationMs: 2500, endMs: 3500, text: 'Das Erste, was sie uns an der Grenze fragen werden,' },
+      { startMs: 3500, durationMs: 2500, endMs: 6000, text: 'ist unser Reisepass.' },
+    ];
+
+    const cues = alignSegments(target, native);
+    expect(cues).toHaveLength(1);
+    expect(cues[0].target).toBe('Das Erste, was sie uns an der Grenze fragen werden, ist unser Reisepass.');
+    expect(cues[0].native).toBe('The first thing they will ask us at the border is our passport.');
+    expect(cues[0].targetWords).toContain('Reisepass');
+  });
+
+  it('correctly appends fmt=json3 to urls with and without existing query params', () => {
+    expect(appendFmt('https://youtube.com/api/timedtext?v=1', 'json3')).toBe(
+      'https://youtube.com/api/timedtext?v=1&fmt=json3'
+    );
+    expect(appendFmt('https://youtube.com/api/timedtext?v=1&fmt=srv3', 'json3')).toBe(
+      'https://youtube.com/api/timedtext?v=1&fmt=json3'
+    );
+  });
+
+  it('fetches auto-translated tlang track by querying fmt=json3 first', async () => {
+    const originalFetch = globalThis.fetch;
+    const requestedUrls: string[] = [];
+
+    globalThis.fetch = async (input: RequestInfo | URL) => {
+      const url = typeof input === 'string' ? input : (input as Request).url;
+      requestedUrls.push(url);
+      if (url.includes('fmt=json3')) {
+        return {
+          ok: true,
+          status: 200,
+          text: async () =>
+            JSON.stringify({
+              events: [
+                {
+                  tStartMs: 500,
+                  dDurationMs: 2000,
+                  segs: [{ utf8: 'Hallo auf Deutsch' }],
+                },
+              ],
+            }),
+        } as Response;
+      }
+      return { ok: false, status: 400, text: async () => '' } as Response;
+    };
+
+    try {
+      const segments = await fetchTimedText('https://www.youtube.com/api/timedtext?v=1&lang=en&tlang=de');
+      expect(segments).toHaveLength(1);
+      expect(segments[0].text).toBe('Hallo auf Deutsch');
+      // Verify fmt=json3 was requested first for tlang
+      expect(requestedUrls[0]).toContain('fmt=json3');
+      expect(requestedUrls[0]).toContain('tlang=de');
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
   });
 });

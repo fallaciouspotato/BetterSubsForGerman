@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
 
   switch (message.type) {
     case 'TRANSLATE_WORD': {
-      handleTranslateWord(message.word)
+      handleTranslateWord(message.word, message.fromLang || 'de', message.toLang || 'en')
         .then((result) => sendResponse({ success: true, data: result }))
         .catch((err) => sendResponse({ success: false, error: err.message }));
       return true;
@@ -145,12 +145,16 @@ class RequestQueue {
 
 const translationQueue = new RequestQueue();
 
-async function handleTranslateWord(surfaceWord: string) {
+async function handleTranslateWord(surfaceWord: string, fromLang: string = 'de', toLang: string = 'en') {
   const cleaned = surfaceWord.trim().toLowerCase();
   if (!cleaned) return null;
 
+  const cacheKey = `${fromLang}:${toLang}:${cleaned}`;
+
   try {
-    const cached = await db.dictCache.get(cleaned);
+    const cached =
+      (await db.dictCache.get(cacheKey)) ||
+      (fromLang === 'de' && toLang === 'en' ? await db.dictCache.get(cleaned) : undefined);
     if (cached) {
       return {
         lemma: cached.lemma,
@@ -165,7 +169,7 @@ async function handleTranslateWord(surfaceWord: string) {
   // 1. Try Google Translate API if not cooling down
   if (Date.now() > googleCoolingDownUntil) {
     try {
-      const gUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=de&tl=en&dt=t&q=${encodeURIComponent(cleaned)}`;
+      const gUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${fromLang}&tl=${toLang}&dt=t&q=${encodeURIComponent(cleaned)}`;
       const res = await fetch(gUrl);
       if (res.status === 429) {
         console.warn('[dual-sub:background] Google Translate rate limited. Cooling down for 5 mins.');
@@ -184,7 +188,7 @@ async function handleTranslateWord(surfaceWord: string) {
 
             db.dictCache
               .put({
-                word: cleaned,
+                word: cacheKey,
                 lemma: cleaned,
                 pos: 'word',
                 glosses: [trans],
@@ -195,15 +199,18 @@ async function handleTranslateWord(surfaceWord: string) {
             return entry;
           }
         }
+      } else {
+        googleCoolingDownUntil = Date.now() + 5 * 60 * 1000;
       }
     } catch {
+      googleCoolingDownUntil = Date.now() + 5 * 60 * 1000;
       // Fall back to MyMemory
     }
   }
 
   // 2. Fallback to MyMemory
   try {
-    const queryUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleaned)}&langpair=de|en`;
+    const queryUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleaned)}&langpair=${fromLang}|${toLang}`;
     const res = await fetch(queryUrl);
     if (res.ok) {
       const data = await res.json();
@@ -220,7 +227,7 @@ async function handleTranslateWord(surfaceWord: string) {
 
           db.dictCache
             .put({
-              word: cleaned,
+              word: cacheKey,
               lemma: cleaned,
               pos: 'word',
               glosses: [cleanTranslation],
@@ -267,8 +274,11 @@ async function doTranslateSentence(text: string, fromLang: string = 'de', toLang
             return translation;
           }
         }
+      } else {
+        googleCoolingDownUntil = Date.now() + 5 * 60 * 1000;
       }
     } catch {
+      googleCoolingDownUntil = Date.now() + 5 * 60 * 1000;
       // Fall through to MyMemory
     }
   }
@@ -370,17 +380,25 @@ async function handleTranslateSentencesBatch(
               }
             }
           }
+        } else {
+          googleCoolingDownUntil = Date.now() + 5 * 60 * 1000;
         }
       } catch {
+        googleCoolingDownUntil = Date.now() + 5 * 60 * 1000;
         // Fall through to direct fallback
       }
     }
 
-    // 2. Direct fallback (calls doTranslateSentence directly without re-enqueueing to avoid deadlock)
+    // 2. Direct fallback (sequential to prevent overwhelming MyMemory rate limits)
     if (!translatedParts || translatedParts.length !== uncachedTexts.length) {
-      translatedParts = await Promise.all(
-        uncachedTexts.map((t) => doTranslateSentence(t, fromLang, toLang))
-      );
+      translatedParts = [];
+      for (const t of uncachedTexts) {
+        const trans = await doTranslateSentence(t, fromLang, toLang);
+        translatedParts.push(trans);
+        if (uncachedTexts.length > 1) {
+          await new Promise((r) => setTimeout(r, 60));
+        }
+      }
     }
 
     // Write back results and populate cache
